@@ -14,19 +14,22 @@ export default function Header(){
                             </h1>
                         </a>
                     </Link>
-                    <ul>
-                        <Link href="/favoris">
-                            <a>
-                                <li>Mes favoris</li>
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                <li>Les salles</li>
-                            </a>
-                        </Link>
+                    <ul className={styles.header__nav__list}>
+                        <li>
+                            <button className={styles.header__nav__list__btn__1}>
+                                Mes favoris
+                            </button>
+                        </li>
+                        <li>
+                            <button className={styles.header__nav__list__btn__2}>
+                                Les salles
+                            </button>
+                        </li>
                     </ul>
                 </nav>
+                <div>
+                    menuPopup
+                </div>
             </header>
             {/* <style jsx>{`
                 header{

@@ -1,0 +1,122 @@
+
+// U T I L S
+
+
+$designReference: 1440px;
+$designReferenceY: 1000px;
+
+$font-size-base:12px;
+// html{
+//     font-size: $font-size-base;
+// }
+
+$ratio: #{strip-unit($designReference)} / #{strip-unit($designReferenceY)};
+
+// M O B I L E
+// $designReferenceMobile:  375px;
+// $designReferenceMobileY: 667px;
+
+$breakpoints: (
+    'phone': 375px,
+    'phone-wide': 480px,
+    'phablet': 560px,
+    'tablet-small': 640px,
+    'tablet': 768px,
+    'tablet-wide': 1024px,
+    'desktop': 1248px,
+    'desktop-wide': 1440px
+);
+$ratios:(
+    'desktop': $ratio
+);
+
+// F U N C T I O N S
+/**
+ * Remove the unit of a length.
+ *
+ * @param float $number - Number to remove the unit from
+ * @return float - Unitless number
+ */
+ @function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+  
+    @return $number;
+  }
+  
+/**
+ * Convert pixel to vw according to a base size.
+ * Values are rounded to two decimals by default.
+ *
+ * @param float $value - Number to convert in vw
+ * @param float $pixels - The pixel base reference
+ * @param boolean $rounded - Rounding the returned value.
+ * @return number - Number in vw
+ */
+ @function pxToVw($value, $pixels: $designReference, $rounded: 1000) {
+    $return: (strip-unit($value) / strip-unit($pixels)) * 100vw;
+    @if $rounded { $return: floor( $return * $rounded ) / $rounded; }
+    @return $return;
+}
+
+@function vw($value, $pixels: $designReference, $rounded: 1000) {
+    @return pxToVw($value, $pixels, $rounded);
+}
+
+/**
+ * Convert pixel to vh according to a base size.
+ * Values are rounded to two decimals by default.
+ *
+ * @param float $value - Number to convert in vh
+ * @param float $pixels - The pixel base reference
+ * @param boolean $rounded - Rounding the returned value.
+ * @return number - Number in vh
+ */
+ @function pxToVh($value, $pixels: $designReferenceY, $rounded: 1000) {
+    $return: (strip-unit($value) / strip-unit($pixels)) * 100vh;
+    @if $rounded { $return: floor( $return * $rounded ) / $rounded; }
+    @return $return;
+}
+
+@function vh($value, $pixels: $designReferenceY, $rounded: 1000) {
+    @return pxToVh($value, $pixels, $rounded);
+}
+/**
+ * Convert pixel to rem according to a base size.
+ * Values are rounded to two decimals by default.
+ *
+ * @param float $value - Number to convert in rem
+ * @param float $pixels - The pixel base reference
+ * @param boolean $rounded - Rounding the returned value.
+ * @return number - Number in rem
+ */
+ @function pxToRem($value, $pixels: $font-size-base, $rounded: 1000) {
+    $return: (strip-unit($value) / strip-unit($pixels)) * 1rem;
+    @if $rounded { $return: floor( $return * $rounded ) / $rounded; }
+    @return $return;
+}
+
+@function rem($value, $pixels: $font-size-base, $rounded: 1000) {
+    @return pxToRem($value, $pixels, $rounded);
+}
+
+// M I X I N S
+    //media queries
+@mixin mq($width, $type: 'max') {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+    }
+
+    @if $type == 'max' {
+        @media only screen and (max-width: $width) {
+            @content;
+        }
+    }
+
+    @if $type == 'min' {
+        @media only screen and (min-width: ($width + 1)) {
+            @content;
+        }
+    }
+}

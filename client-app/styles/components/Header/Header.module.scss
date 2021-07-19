@@ -1,10 +1,52 @@
+@import "../../utils/starter.scss";
 .header{
-    background-color: #e4e4e4;
+    padding: vw(32) vw(64) vw(48) vw(64);
     &__nav{
-        background-color: blue;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__list{
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            &__btn{
+                &__1{
+                    margin-right:vw(8);
+                }
+                &__2{
+                    margin-left:vw(8);
+                }
+            }
+        }
         &__home{
-            background-color: white;
+            background-color: grey;
             border-radius: 50%;
+            width:vw(40);
+            height:vw(40);
+        }
+    }
+    @include mq(tablet-small,"max"){
+
+    }
+    @include mq(tablet-small,'min'){
+        @media (min-aspect-ratio: map-get($ratios, desktop)) {
+            padding: vh(32) vw(64) vh(48) vw(64);
+            &__nav{
+                &__list{
+                    &__btn{
+                        &__1{
+                            // margin-right:vw(8);
+                        }
+                        &__2{
+                            // margin-left:vw(8);
+                        }
+                    }
+                }
+                &__home{
+                    width:vh(40);
+                    height:vh(40);
+                }
+            }
         }
     }
 }
