@@ -7,9 +7,9 @@ export default function Home() {
       <main className={styles.main}>
         <code>Page: home</code>
         <div>
-          <button>{`<`}</button>
+          <button>back</button>
           <p>Salle A625</p>
-          <button>{`>`}</button>
+          <button>next</button>
         </div>
         <div>
           <div>Map</div>
