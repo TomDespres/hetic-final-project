@@ -3,7 +3,7 @@
     "background_color": "#e5e5e5",
     "display": "standalone",
     "scope": "/",
-    "start_url": "https://hetic-final-project.vercel.app/",
+    "start_url": "https://vite-ma-table.vercel.app/",
     "name": "Vite Ma Table - HETIC",
     "short_name": "Vite Ma Table",
     "description": "une desciption ici bradaaa",
