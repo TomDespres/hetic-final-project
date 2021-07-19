@@ -1,0 +1,10 @@
+.header{
+    background-color: #e4e4e4;
+    &__nav{
+        background-color: blue;
+        &__home{
+            background-color: white;
+            border-radius: 50%;
+        }
+    }
+}
