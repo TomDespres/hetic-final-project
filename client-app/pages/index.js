@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styles from '../styles/pages/Home.module.scss'
 
 export default function Home() {
@@ -13,8 +12,8 @@ export default function Home() {
         </div>
         <div>
           <div>Map</div>
-          <div>Affluence/h</div>
-          <div>Temps moyen d'utilisation</div>
+          <div>Affluence</div>
+          <div>{`Temps moyen d'utilisation`}</div>
           <div>Marqueur</div>
         </div>
       </main>
