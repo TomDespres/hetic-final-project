@@ -1,4 +1,4 @@
-@import "../../utils/starter.scss";
+@import "../../utils/index.scss";
 .header{
     padding: vw(32) vw(64) vw(48) vw(64);
     &__nav{
@@ -10,6 +10,9 @@
             display: flex;
             justify-content: flex-end;
             &__btn{
+                @include font-cta{
+                    @include reset-button;
+                }
                 &__1{
                     margin-right:vw(8);
                 }
@@ -19,26 +22,59 @@
             }
         }
         &__home{
-            background-color: grey;
-            border-radius: 50%;
-            width:vw(40);
-            height:vw(40);
+            &__svg{
+                width:vw(34.91);
+                height:vw(48);
+            }
+            &__container{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            &__content{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left:vw(5);
+                &__title{
+                    @include font-title;
+                    color:var(--color-white);
+                    margin-bottom:vw(3);
+                }
+                &__subtitle{
+                    @include font-subtitle;
+                    color:var(--color-white);
+
+                }
+            }
         }
     }
-    @include mq(tablet-small,"max"){
-
+    &__popup{
+        position: absolute;
+        width:vw(386);
+        height:100vh;
+        top:0;
+        right:0;
+        background-color: var(--color-black);
+        transform: translate3d(100%,0,0);
     }
-    @include mq(tablet-small,'min'){
-        @media (min-aspect-ratio: map-get($ratios, desktop)) {
+}
+
+@include mq(tablet-small,"max"){
+
+}
+@include mq(tablet-small,'min'){
+    @media (min-aspect-ratio: map-get($ratios, desktop)) {
+        .header{
             padding: vh(32) vw(64) vh(48) vw(64);
             &__nav{
                 &__list{
                     &__btn{
                         &__1{
-                            // margin-right:vw(8);
+                            margin-right:vh(8);
                         }
                         &__2{
-                            // margin-left:vw(8);
+                            margin-left:vh(8);
                         }
                     }
                 }

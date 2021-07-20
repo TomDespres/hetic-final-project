@@ -1,0 +1,27 @@
+@mixin font-title{
+    font-family: var(--font-secondary);
+    font-size: vw(20);
+    line-height: 100%;
+    font-weight: normal;
+}
+@mixin font-subtitle{
+    font-family: var(--font-primary);
+    font-size: vw(8.5);
+    line-height: 100%;
+    font-weight: normal;
+}
+@mixin font-cta{
+    font-family: var(--font-primary);
+    font-size: vw(16);
+    line-height: 100%;
+    font-weight: normal;
+    color:var(--color-white);
+    @content;
+}
+@mixin reset-button{
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}

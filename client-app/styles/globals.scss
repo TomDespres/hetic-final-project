@@ -1,10 +1,29 @@
+@import 'utils/index.scss';
+// V A R S
+:root{
+  //fonts
+  --font-primary : "Raleway";
+  --font-secondary : "Roboto";
+  //colors
+  --color-white : #FFF;
+  --color-black : #171717;
+  --color-grey : #C4C4C4;
+  --color-grey-darker : #555555;
+  --color-orange : #F19812;
+  --color-yellow : #F6E015;
+}
+
 html,
 body {
-  background-color: #e4e4e4;
+  background-color: var(--color-black);
+  color:var(--color-white);
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: var(--font-primary), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+body{
+  overflow: hidden;
 }
 
 a {
@@ -14,4 +33,13 @@ a {
 
 * {
   box-sizing: border-box;
+}
+h1,h2,h3,h4,h5{
+  margin:0;
+}
+button{
+  @include reset-button
+}
+p{
+  margin:0;
 }
