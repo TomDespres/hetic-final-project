@@ -82,7 +82,7 @@ export default function Home(props) {
             </div>
           </div>   
           <div className={styles.map__average}>
-            <h4 className={styles.map__average__title}>Temps d'affluence moyen</h4>
+            <h4 className={styles.map__average__title}>{`Temps d'affluence moyen`}</h4>
             <p className={styles.map__average__content}>~ 30 min</p>
           </div>
         </div>
