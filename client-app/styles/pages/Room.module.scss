@@ -181,37 +181,64 @@
         width:vh(2600);
         &__marker{
             padding:vh(16);
-            width:vh(322);
+            width:vh(233);
             border-radius: vh(16);
-            &__img{
-                &__wrapper{
-                    height:vh(124);
-                    border-radius: vh(8);
-                }
-                width:100%;
-                height: auto;
-            }
-            &__sound{
-                width:vh(13.5);
-                height:vh(16);
-                margin-top: vh(12);
-                margin-bottom: vh(12);
-                margin-left: vh(5);
-            }
             &__contentList{
-                &__item:first-of-type{
+                &__item{
                     margin-bottom: vh(8);
+                    &:last-of-type{
+                        margin-bottom: vh(0);
+                    }
+                }
+                &__availability{
+                    &__svg{
+                        margin-right:vh(8);
+                        width:vh(14);
+                        height:vh(14);
+                    }
                 }
             }
             &__btn{
-                bottom:vh(16);
-                right:vh(16);
-                width:vh(22.7);
-                height:vh(21.3);
+                top:vh(24.59);
+                right:vh(22);
+                width:vh(12);
+                height:vh(7.41);
             }
             &__arrowBottom{
                 width:vh(36);
             }
         }
-    }    
+        &__stats{
+            top:vh(58);
+            left:vh(58);
+            padding:vh(16);
+            width:vh(322);
+            border-radius: vh(16);
+            &__stick{
+                &__container{
+                    margin-top:vh(24);
+                }
+                margin-right:vh(7);
+                width:vh(18);
+                height:vh(60);
+                &:last-of-type{
+                    margin-right:vh(0);
+                    height:vh(6);
+                }
+            }
+            &__day{
+                margin: 0 vh(5.8);
+            }
+        }
+        &__average{
+            top:vh(224);
+            left:vh(58);
+            padding:vh(16);
+            width:vh(322);
+            border-radius: vh(16);
+            &__content{
+                margin-top:vh(4);
+            }
+        }
+    } 
 }
