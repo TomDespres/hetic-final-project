@@ -41,58 +41,118 @@
         position: absolute;
         top:50%;
         left:50%;
-        transform: translate3d(-10%,-100%,0);
+        transform: translate3d(70%,-270%,0);
         padding:vw(16);
-        width:vw(322);
+        width:vw(233);
         border-radius: vw(16);
         border: 1px solid var(--color-grey-darker);
         background-color: var(--color-black);
-        &__img{
-            &__wrapper{
-                width:100%;
-                height:vw(124);
-                overflow: hidden;
-                border-radius: vw(8);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            width:100%;
-            height: auto;
-        }
-        &__sound{
-            width:vw(13.5);
-            height:vw(16);
-            margin-top: vw(12);
-            margin-bottom: vw(12);
-            margin-left: vw(5);
-        }
         &__contentList{
             list-style-type: none;
             padding: 0;
             margin: 0;
-            &__item:first-of-type{
+            &__item{
                 margin-bottom: vw(8);
+                @include font-label;
+                &:last-of-type{
+                    margin-bottom: vw(0);
+                }
+                &__text{
+                    @include font-paragraph;
+                }
+            }
+            &__availability{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                @include font-paragraph;
+                &__svg{
+                    margin-right:vw(8);
+                    width:vw(14);
+                    height:vw(14);
+                }
             }
         }
         &__btn{
             position: absolute;
-            bottom:vw(16);
-            right:vw(16);
-            @include reset-button;
-            width:vw(22.7);
-            height:vw(21.3);
+            top:vw(24.59);
+            right:vw(22);
+            width:vw(12);
+            height:vw(7.41);
             &__svg{
-                width:100%;
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
                 height:auto;
             }
         }
         &__arrowBottom{
             position: absolute;
             width:vw(36);
-            top:100%;
+            top:calc(100% + 1px);
             left:50%;
             transform: translate3d(-50%,0,0);
+        }
+    }
+    &__stats{
+        position: absolute;
+        top:vw(58);
+        left:vw(58);
+        padding:vw(16);
+        width:vw(322);
+        border-radius: vw(16);
+        border: 1px solid var(--color-grey-darker);
+        background-color: var(--color-black);
+        &__title{
+            @include font-label;
+            &__hours{
+                color:var(--color-yellow);
+            }
+            &__day{
+                color:var(--color-orange);
+            }
+        }
+        &__stick{
+            &__container{
+                margin-top:vw(24);
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            margin-right:vw(7);
+            width:vw(18);
+            height:vw(60);
+            background-color: var(--color-yellow);
+            &:last-of-type{
+                margin-right:vw(0);
+                height:vw(6);
+            }
+        }
+        &__day{
+            &__container{
+                display: flex;
+                justify-content: center;
+            }
+            margin: 0 vw(5.8);
+            @include font-graph;
+        }
+    }
+    &__average{
+        position: absolute;
+        top:vw(224);
+        left:vw(58);
+        padding:vw(16);
+        width:vw(322);
+        border-radius: vw(16);
+        border: 1px solid var(--color-grey-darker);
+        background-color: var(--color-black);
+        &__title{
+            @include font-label;
+        }
+        &__content{
+            @include font-paragraph;
+            margin-top:vw(4);
         }
     }
 }

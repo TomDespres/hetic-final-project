@@ -90,7 +90,7 @@
         &__arrowBottom{
             position: absolute;
             width:vw(36);
-            top:100%;
+            top:calc(100% + 1px);
             left:50%;
             transform: translate3d(-50%,0,0);
         }

@@ -16,6 +16,37 @@
         font-size: vh(8.5);
     }
 }
+@mixin font-graph{
+    font-family: var(--font-secondary);
+    font-size: vw(12);
+    line-height: vw(16);
+    font-weight: 300;
+    color:var(--color-white);
+    @include desktop-vh{
+        font-size: vh(12);
+    }
+}
+@mixin font-paragraph{
+    font-family: var(--font-secondary);
+    font-size: vw(16);
+    line-height: 100%;
+    font-weight: 300;
+    color:var(--color-white);
+    @include desktop-vh{
+        font-size: vh(16);
+    }
+}
+@mixin font-label{
+    font-family: var(--font-secondary);
+    font-size: vw(16);
+    line-height: 100%;
+    font-weight: 500;
+    color:var(--color-white);
+    @content;
+    @include desktop-vh{
+        font-size: vh(16);
+    }
+}
 @mixin font-cta{
     font-family: var(--font-primary);
     font-size: vw(16);

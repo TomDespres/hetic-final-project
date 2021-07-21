@@ -1,38 +1,17 @@
 {
-    "theme_color": "#ff0000",
-    "background_color": "#e5e5e5",
+    "theme_color": "#171717",
+    "background_color": "#171717",
     "display": "standalone",
     "scope": "/",
     "start_url": "https://vite-ma-table.vercel.app/",
-    "name": "Vite Ma Table - HETIC",
-    "short_name": "Vite Ma Table",
+    "name": "ViteMaTable - HETIC",
+    "short_name": "ViteMaTable",
     "description": "une desciption ici bradaaa",
     "icons": [
         {
-            "src": "/icons/pwa/icon-144x144_old.png",
-            "sizes": "144x144",
+            "src": "/android-chrome-96x96.png",
+            "sizes": "96x96",
             "type": "image/png"
-        },
-        {
-            "src": "/icons/pwa/icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/icons/pwa/icon-256x256.png",
-            "sizes": "256x256",
-            "type": "image/png"
-        },
-        {
-            "src": "/icons/pwa/icon-384x384.png",
-            "sizes": "384x384",
-            "type": "image/png"
-        },
-        {
-            "src": "/icons/pwa/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "maskable"
         }
     ]
 }

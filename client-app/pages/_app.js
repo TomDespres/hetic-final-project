@@ -20,16 +20,22 @@ function MyApp({ Component, pageProps }) {
         <meta name='format-detection' content='telephone=no' />
         <meta name='mobile-web-app-capable' content='yes' />
         <meta name='msapplication-config' content='/static/icons/browserconfig.xml' />
-        <meta name='msapplication-TileColor' content='#2B5797' />
+        <meta name='msapplication-TileColor' content='#171717' />
         <meta name='msapplication-tap-highlight' content='no' />
-        <meta name='theme-color' content='#0000FF' />
+        <meta name='theme-color' content='#171717' />
 
         <link rel='manifest' href='/manifest.json' />
+
+        {/* F A V I C O N */}
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
 
         {/* F O N T S */}
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300;500&display=swap" rel="stylesheet"/>
       </Head>
       <Header/>
       <Component {...pageProps} />
