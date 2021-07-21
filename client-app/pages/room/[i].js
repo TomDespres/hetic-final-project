@@ -24,7 +24,7 @@ export default function Home(props) {
           <ButtonBack currentRoomIndex={currentRoomIndex} rooms={rooms} variant="next"/>          
         </div>
         <div className={styles.map__wrapper}>  
-          <RoomSvg room={room} />,        
+          <RoomSvg room={room} />      
         </div>
       </main>
     </div>
