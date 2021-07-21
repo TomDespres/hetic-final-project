@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Vite Ma Table</title>
+        <title>ViteMaTable</title>
         <meta name="description" content="description HERE -------------------" />
         <link rel="icon" href="/favicon.ico" />
 
