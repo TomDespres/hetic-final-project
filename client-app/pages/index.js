@@ -8,17 +8,17 @@ export default function Home() {
     <div className={styles.wrapper}>
       <main className={styles.main}>
         <div className={styles.pagination}>
-          <button>
+          {/* <button>
             <svg className={styles.pagination__svg} viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z" fill="white"/>
             </svg>
-          </button>
+          </button> */}
           <p>étage 1</p>
-          <button>
+          {/* <button>
             <svg className={styles.pagination__svg} viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.99984 0L0.589844 1.41L5.16984 6L0.589844 10.59L1.99984 12L7.99984 6L1.99984 0Z" fill="white"/>
             </svg>
-          </button>
+          </button> */}
         </div>
         <div className={styles.map__wrapper}>
           <svg className={styles.map} viewBox="0 0 9285 5353" fill="none" xmlns="http://www.w3.org/2000/svg">
