@@ -60,29 +60,38 @@
     }
 }
 
-@include mq(tablet-small,"max"){
+@include mobile-rem{
 
 }
-@include mq(tablet-small,'min'){
-    @media (min-aspect-ratio: map-get($ratios, desktop)) {
-        .header{
-            padding: vh(32) vw(64) vh(48) vw(64);
-            &__nav{
-                &__list{
-                    &__btn{
-                        &__1{
-                            margin-right:vh(8);
-                        }
-                        &__2{
-                            margin-left:vh(8);
-                        }
+@include desktop-vh{
+    .header{
+        padding: vh(32) vw(64) vh(48) vw(64);
+        &__nav{
+            &__list{
+                &__btn{
+                    &__1{
+                        margin-right:vh(8);
+                    }
+                    &__2{
+                        margin-left:vh(8);
                     }
                 }
-                &__home{
-                    width:vh(40);
-                    height:vh(40);
+            }
+            &__home{
+                &__svg{
+                    width:vh(34.91);
+                    height:vh(48);
+                }
+                &__content{
+                    margin-left:vh(5);
+                    &__title{
+                        margin-bottom:vh(3);
+                    }
                 }
             }
+        }
+        &__popup{
+            width:vh(386);
         }
     }
 }

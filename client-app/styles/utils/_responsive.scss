@@ -1,32 +1,3 @@
-// V A R S
-$designReference: 1440px;
-$designReferenceY: 1000px;
-
-$font-size-base:12px;
-// html{
-//     font-size: $font-size-base;
-// }
-
-$ratio: #{strip-unit($designReference)} / #{strip-unit($designReferenceY)};
-
-// M O B I L E
-// $designReferenceMobile:  375px;
-// $designReferenceMobileY: 667px;
-
-$breakpoints: (
-    'phone': 375px,
-    'phone-wide': 480px,
-    'phablet': 560px,
-    'tablet-small': 640px,
-    'tablet': 768px,
-    'tablet-wide': 1024px,
-    'desktop': 1248px,
-    'desktop-wide': 1440px
-);
-$ratios:(
-    'desktop': $ratio
-);
-
 // F U N C T I O N S
 /**
  * Remove the unit of a length.
@@ -117,3 +88,44 @@ $ratios:(
         }
     }
 }
+
+
+@mixin mobile-rem(){
+    @include mq(tablet-small,"max"){
+        @content
+    }
+}
+@mixin desktop-vh(){
+    @media only screen and (min-width: (map_get($breakpoints, tablet-small) + 1)) and (min-aspect-ratio: map-get($ratios, desktop)){
+        @content
+    }
+}
+// V A R S
+$designReference: 1440px;
+$designReferenceY: 1000px;
+
+$font-size-base:12px;
+// html{
+//     font-size: $font-size-base;
+// }
+
+$ratio: #{strip-unit($designReference)} / #{strip-unit($designReferenceY)};
+
+// M O B I L E
+// $designReferenceMobile:  375px;
+// $designReferenceMobileY: 667px;
+
+$breakpoints: (
+    'phone': 375px,
+    'phone-wide': 480px,
+    'phablet': 560px,
+    'tablet-small': 640px,
+    'tablet': 768px,
+    'tablet-wide': 1024px,
+    'desktop': 1248px,
+    'desktop-wide': 1440px
+);
+$ratios:(
+    'desktop': $ratio
+);
+

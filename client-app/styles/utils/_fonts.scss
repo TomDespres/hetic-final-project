@@ -3,12 +3,18 @@
     font-size: vw(20);
     line-height: 100%;
     font-weight: normal;
+    @include desktop-vh{
+        font-size: vh(20);
+    }
 }
 @mixin font-subtitle{
     font-family: var(--font-primary);
     font-size: vw(8.5);
     line-height: 100%;
     font-weight: normal;
+    @include desktop-vh{
+        font-size: vh(8.5);
+    }
 }
 @mixin font-cta{
     font-family: var(--font-primary);
@@ -17,6 +23,9 @@
     font-weight: normal;
     color:var(--color-white);
     @content;
+    @include desktop-vh{
+        font-size: vh(16);
+    }
 }
 @mixin reset-button{
     cursor: pointer;
