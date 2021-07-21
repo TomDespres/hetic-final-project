@@ -210,7 +210,7 @@ function RoomSvg({room}) {
               </svg>
       break;
     default:
-      return <p>sorry, there isn't room</p>;
+      return <p>{"sorry, there isn't room"}</p>;
       break;
   }
 }
