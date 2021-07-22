@@ -53,6 +53,7 @@ body{
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 * {
@@ -63,6 +64,7 @@ h1,h2,h3,h4,h5{
 }
 button{
   @include reset-button
+  -webkit-tap-highlight-color: transparent;
 }
 p{
   margin:0;
