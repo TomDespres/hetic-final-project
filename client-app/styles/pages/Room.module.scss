@@ -27,6 +27,7 @@
     transform:translate3d(-50%,-50%,0);
     width:vw(2600);
     height:auto;
+    cursor:grab;
     &__table{
         cursor:pointer;
         transition: fill .5s cubic-bezier(0.075, 0.82, 0.165, 1);
