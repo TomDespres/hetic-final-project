@@ -1,7 +1,60 @@
 import styles from '../styles/components/Header/Header.module.scss'
 import Link from 'next/link'
+import { useEffect, useRef } from 'react'
 
 export default function Header(){
+    const domHeaderFav = useRef(null);
+    const domHeaderRooms = useRef(null);
+    const domPopupFav = useRef(null);
+    const domPopupFavSvg = useRef(null);
+    const domPopupRooms = useRef(null);
+    const domPopupRoomsSvg = useRef(null);
+    const domPopupBackground = useRef(null);
+    const domPopup = useRef(null);
+    const domPopupClose = useRef(null);
+    // useEffect(() => {
+    
+    // },[]);
+
+    const openMenu = (e)=>{
+        if(e.target === domHeaderFav.current){
+            domPopupFav.current.style.display = 'flex';
+            domPopupFavSvg.current.parentNode.classList.add('open');
+            domPopupFavSvg.current.style.transform = 'translate3d(0,-50%,0) rotate(-180deg)';
+        }
+        if(e.target === domHeaderRooms.current){
+            domPopupRooms.current.style.display = 'flex';
+            domPopupRoomsSvg.current.parentNode.classList.add('open');
+            domPopupRoomsSvg.current.style.transform = 'translate3d(0,-50%,0) rotate(-180deg)';
+        }
+        // if(e.target === domHeaderFav)
+        domPopupBackground.current.style.opacity = '.3';
+        domPopup.current.style.transform = 'translate3d(0,0,0)';
+    }
+    const onClickList = (e)=>{
+        if(e.target.classList.contains('open')){
+            e.target.nextElementSibling.style.display = 'none';
+            e.target.children[0].style.transform = 'translate3d(0,-50%,0) rotate(0deg)';
+        }else{
+            e.target.nextElementSibling.style.display = 'flex';
+            e.target.children[0].style.transform = 'translate3d(0,-50%,0) rotate(-180deg)';
+        }
+        e.target.classList.toggle('open');
+    }
+    function closeMenu(){
+        domPopupBackground.current.style.opacity = '0';
+        domPopup.current.style.transform = 'translate3d(100%,0,0)';
+
+        domPopupFav.current.style.display = 'none';
+        domPopupFavSvg.current.parentNode.classList.remove('open');
+        domPopupFavSvg.current.style.transform = 'translate3d(0,-50%,0) rotate(0deg)';
+        
+        domPopupRoomsSvg.current.parentNode.classList.remove('open');
+        domPopupRooms.current.style.display = 'none';
+        domPopupRoomsSvg.current.style.transform = 'translate3d(0,-50%,0) rotate(0deg)';
+
+
+    }
     return(
             <header className={styles.header}>
                 <nav className={styles.header__nav}>
@@ -30,38 +83,38 @@ export default function Header(){
                     </Link>
                     <ul className={styles.header__nav__list}>
                         <li>
-                            <button className={styles.header__nav__list__btn+' '+styles.header__nav__list__btn__1}>
+                            <button className={styles.header__nav__list__btn+' '+styles.header__nav__list__btn__1} onClick={openMenu} ref={domHeaderFav}>
                                 Mes favoris
                             </button>
                         </li>
                         <li>
-                            <button className={styles.header__nav__list__btn+' '+styles.header__nav__list__btn__2}>
+                            <button className={styles.header__nav__list__btn+' '+styles.header__nav__list__btn__2} onClick={openMenu} ref={domHeaderRooms}>
                                 Les salles
                             </button>
                         </li>
                     </ul>
-                    <button className={styles.header__nav__btn__mobile}>
+                    <button className={styles.header__nav__btn__mobile} onClick={openMenu}>
                         <svg className={styles.header__nav__btn__mobile__svg} viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z" fill="white"/>
                         </svg>
                     </button>
                 </nav>
-                <div className={styles.header__popup__background}></div>
-                <div className={styles.header__popup}>
-                        <button className={styles.header__popup__close__btn}>
+                <div className={styles.header__popup__background} ref={domPopupBackground}></div>
+                <div className={styles.header__popup} ref={domPopup}>
+                        <button className={styles.header__popup__close__btn} ref={domPopupClose} onClick={closeMenu}>
                             <svg className={styles.header__popup__close__svg} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="white"/>
                             </svg>
 
                         </button>
                         <div className={styles.header__popup__content}>
-                            <button className={styles.header__popup__content__label}>Voir les salles favorites
-                                <svg className={styles.header__popup__content__label__svg} viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button className={styles.header__popup__content__label} onClick={onClickList}>Voir les salles favorites
+                                <svg ref={domPopupFavSvg} className={styles.header__popup__content__label__svg} viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6 0L0 6L1.41 7.41L6 2.83L10.59 7.41L12 6L6 0Z" fill="white"/>
                                 </svg>
 
                             </button>
-                            <ul className={styles.header__popup__content__list}>
+                            <ul className={styles.header__popup__content__list} ref={domPopupFav}>
                                 <li className={styles.header__popup__content__list__item}>
                                     <button>
                                         <svg className={styles.header__popup__content__list__item__svg} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,12 +142,12 @@ export default function Header(){
                             </ul>
                         </div>
                         <div className={styles.header__popup__content}>
-                            <button className={styles.header__popup__content__label}>Voir la liste des salles
-                                <svg className={styles.header__popup__content__label__svg} viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button className={styles.header__popup__content__label} onClick={onClickList}>Voir la liste des salles
+                                <svg ref={domPopupRoomsSvg} className={styles.header__popup__content__label__svg} viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6 0L0 6L1.41 7.41L6 2.83L10.59 7.41L12 6L6 0Z" fill="white"/>
                                 </svg>
                             </button>
-                            <ul className={styles.header__popup__content__list}>
+                            <ul className={styles.header__popup__content__list} ref={domPopupRooms}>
                                 <li className={styles.header__popup__content__list__item}>
                                     <button>
                                         <svg className={styles.header__popup__content__list__item__svg} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,3 +189,4 @@ export default function Header(){
             </header>
     )
 }
+
