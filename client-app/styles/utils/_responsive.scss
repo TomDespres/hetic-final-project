@@ -96,7 +96,8 @@
     }
 }
 @mixin desktop-vh(){
-    @media only screen and (min-width: (map_get($breakpoints, tablet) + 1)) and (min-aspect-ratio: map-get($ratios, desktop)){
+    // @media only screen and (min-width: (map_get($breakpoints, tablet) + 1)) and (min-aspect-ratio: map-get($ratios, desktop)){
+    @media only screen and (min-aspect-ratio: map-get($ratios, desktop)){
         @content;
     }
 }
