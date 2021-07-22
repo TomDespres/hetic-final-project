@@ -18,6 +18,7 @@ function MyApp({ Component, pageProps }) {
         <meta name='apple-mobile-web-app-title' content='PWA App' />
         <meta name='description' content='Best PWA App in the world' />
         <meta name='format-detection' content='telephone=no' />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name='mobile-web-app-capable' content='yes' />
         <meta name='msapplication-config' content='/static/icons/browserconfig.xml' />
         <meta name='msapplication-TileColor' content='#171717' />
@@ -35,7 +36,7 @@ function MyApp({ Component, pageProps }) {
         {/* F O N T S */}
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300;500&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"/>
       </Head>
       <Header/>
       <Component {...pageProps} />

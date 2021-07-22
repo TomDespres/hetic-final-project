@@ -2,8 +2,8 @@
 // V A R S
 :root{
   //fonts
-  --font-primary : "Raleway";
-  --font-secondary : "Roboto";
+  --font-raleway : "Raleway";
+  --font-roboto : "Roboto";
   //colors
   --color-white : #FFF;
   --color-black : #171717;
@@ -11,16 +11,40 @@
   --color-grey-darker : #555555;
   --color-orange : #F19812;
   --color-yellow : #F6E015;
+
+  --color-gradient-grey: linear-gradient(180deg, rgb(23, 23, 23) 0%, rgb(85, 85, 85) 25.18%, rgb(196, 196, 196) 100%);
 }
 
 html,
 body {
   background-color: var(--color-black);
   color:var(--color-white);
+  width:100%;
   padding: 0;
   margin: 0;
-  font-family: var(--font-primary), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: var(--font-raleway), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+html{
+  font-size: vw(12px, $designReferenceMobile);
+
+    // M E D I A   Q U E R I E S
+    @media (min-width: map-get($breakpoints, mobile)){
+        font-size: 12px;
+    }
+    // @media (min-width: map-get($breakpoints, tablet)){
+    //     font-size: vw(16px);
+    //     @media (min-aspect-ratio: map-get($ratios, desktop)) {
+    //         font-size: vh(16px);
+    //     }
+    // }
+    @media (min-width: (map-get($breakpoints, tablet-small) + 1)){
+        font-size: vw(12px);
+        // @media (min-width: map-get($breakpoints, desktop-wide)) and (min-aspect-ratio: map-get($ratios, desktop)) {
+        @media (min-aspect-ratio: map-get($ratios, desktop)) {
+            font-size: vh(12px);
+        }
+    }
 }
 body{
   overflow: hidden;

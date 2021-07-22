@@ -50,41 +50,49 @@ export default function Home(props) {
               <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
             </svg>
           </div> 
-          <div className={styles.map__stats}>
-            <h4 className={styles.map__stats__title}>
-              Affluence par 
-              <span className={styles.map__stats__title__hours}> Heure</span> / <span className={styles.map__stats__title__day}>Jour</span>
-            </h4>
-            <div className={styles.map__stats__stick__container}>
-              <div className={styles.map__stats__stick} data-index="0" data-height="10"></div>
-              <div className={styles.map__stats__stick} data-index="1" data-height="10"></div>
-              <div className={styles.map__stats__stick} data-index="2" data-height="10"></div>
-              <div className={styles.map__stats__stick} data-index="3" data-height="10"></div>
-              <div className={styles.map__stats__stick} data-index="4" data-height="10"></div>
-              <div className={styles.map__stats__stick} data-index="5" data-height="10"></div>
-              <div className={styles.map__stats__stick} data-index="6" data-height="10"></div>
-              <div className={styles.map__stats__stick} data-index="7" data-height="10"></div>
-              <div className={styles.map__stats__stick} data-index="8" data-height="10"></div>
-              <div className={styles.map__stats__stick} data-index="9" data-height="10"></div>
+          <div className={styles.map__info__slider}>
+            <div className={styles.map__info__slider__pagination}>
+              <div className={styles.map__info__slider__pagination__round+" "+styles.map__info__slider__pagination__round__selected}></div>
+              <div className={styles.map__info__slider__pagination__round}></div>
             </div>
-            <div className={styles.map__stats__day__container}>
-              <span className={styles.map__stats__day}>9</span>
-              <span className={styles.map__stats__day}>10</span>
-              <span className={styles.map__stats__day}>11</span>
-              <span className={styles.map__stats__day}>12</span>
-              <span className={styles.map__stats__day}>13</span>
-              <span className={styles.map__stats__day}>14</span>
-              <span className={styles.map__stats__day}>15</span>
-              <span className={styles.map__stats__day}>16</span>
-              <span className={styles.map__stats__day}>17</span>
-              <span className={styles.map__stats__day}>18</span>
-              <span className={styles.map__stats__day}>19</span>
+            <div className={styles.map__stats}>
+              <h4 className={styles.map__stats__title}>
+                Affluence par 
+                <span className={styles.map__stats__title__hours}> Heure</span> / <span className={styles.map__stats__title__day}>Jour</span>
+              </h4>
+              <div className={styles.map__stats__stick__container}>
+                <div className={styles.map__stats__stick} data-index="0" data-height="10"></div>
+                <div className={styles.map__stats__stick} data-index="1" data-height="10"></div>
+                <div className={styles.map__stats__stick} data-index="2" data-height="10"></div>
+                <div className={styles.map__stats__stick} data-index="3" data-height="10"></div>
+                <div className={styles.map__stats__stick} data-index="4" data-height="10"></div>
+                <div className={styles.map__stats__stick} data-index="5" data-height="10"></div>
+                <div className={styles.map__stats__stick} data-index="6" data-height="10"></div>
+                <div className={styles.map__stats__stick} data-index="7" data-height="10"></div>
+                <div className={styles.map__stats__stick} data-index="8" data-height="10"></div>
+                <div className={styles.map__stats__stick} data-index="9" data-height="10"></div>
+              </div>
+              <div className={styles.map__stats__day__container}>
+                <span className={styles.map__stats__day}>9</span>
+                <span className={styles.map__stats__day}>10</span>
+                <span className={styles.map__stats__day}>11</span>
+                <span className={styles.map__stats__day}>12</span>
+                <span className={styles.map__stats__day}>13</span>
+                <span className={styles.map__stats__day}>14</span>
+                <span className={styles.map__stats__day}>15</span>
+                <span className={styles.map__stats__day}>16</span>
+                <span className={styles.map__stats__day}>17</span>
+                <span className={styles.map__stats__day}>18</span>
+                <span className={styles.map__stats__day}>19</span>
+              </div>
+            </div>   
+            <div className={styles.map__average}>
+              <h4 className={styles.map__average__title}>{`Temps d'affluence moyen`}</h4>
+              <p className={styles.map__average__content}>~ 30 min</p>
             </div>
-          </div>   
-          <div className={styles.map__average}>
-            <h4 className={styles.map__average__title}>{`Temps d'affluence moyen`}</h4>
-            <p className={styles.map__average__content}>~ 30 min</p>
+            
           </div>
+          
         </div>
       </main>
     </div>

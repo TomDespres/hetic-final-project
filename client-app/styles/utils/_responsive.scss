@@ -91,13 +91,13 @@
 
 
 @mixin mobile-rem(){
-    @include mq(tablet-small,"max"){
-        @content
+    @include mq(map_get($breakpoints, tablet-small),"max"){
+        @content;
     }
 }
 @mixin desktop-vh(){
-    @media only screen and (min-width: (map_get($breakpoints, tablet-small) + 1)) and (min-aspect-ratio: map-get($ratios, desktop)){
-        @content
+    @media only screen and (min-width: (map_get($breakpoints, tablet) + 1)) and (min-aspect-ratio: map-get($ratios, desktop)){
+        @content;
     }
 }
 // V A R S
@@ -112,8 +112,8 @@ $font-size-base:12px;
 $ratio: #{strip-unit($designReference)} / #{strip-unit($designReferenceY)};
 
 // M O B I L E
-// $designReferenceMobile:  375px;
-// $designReferenceMobileY: 667px;
+$designReferenceMobile:  320px;
+$designReferenceMobileY: 568px;
 
 $breakpoints: (
     'phone': 375px,

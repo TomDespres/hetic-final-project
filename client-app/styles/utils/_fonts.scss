@@ -1,61 +1,122 @@
 @mixin font-title{
-    font-family: var(--font-secondary);
+    font-family: var(--font-roboto);
     font-size: vw(20);
     line-height: 100%;
     font-weight: normal;
+    @include mobile-rem{
+        font-size: rem(20);
+    }
     @include desktop-vh{
         font-size: vh(20);
     }
 }
 @mixin font-subtitle{
-    font-family: var(--font-primary);
+    font-family: var(--font-raleway);
     font-size: vw(8.5);
     line-height: 100%;
     font-weight: normal;
+    @include mobile-rem{
+        font-size: rem(8.5);
+    }
     @include desktop-vh{
         font-size: vh(8.5);
     }
 }
+@mixin font-pagination{
+    font-family: var(--font-raleway);
+    font-size: vw(16);
+    line-height: 100%;
+    font-weight: 500;
+    @include mobile-rem{
+        font-size: rem(16);
+    }
+    @include desktop-vh{
+        font-size: vh(16);
+    }
+}
+
 @mixin font-graph{
-    font-family: var(--font-secondary);
+    font-family: var(--font-roboto);
     font-size: vw(12);
     line-height: vw(16);
     font-weight: 300;
     color:var(--color-white);
+    @include mobile-rem{
+        font-size: rem(12);
+        line-height: rem(16);
+    }
     @include desktop-vh{
         font-size: vh(12);
     }
 }
+@mixin font-info{
+    font-family: var(--font-roboto);
+    font-size: vw(12);
+    line-height: vw(16);
+    font-weight: 400;
+    color:var(--color-white);
+    @include mobile-rem{
+        font-size: rem(12);
+        line-height: rem(16);
+    }
+    @include desktop-vh{
+        font-size: vh(12);
+        line-height: vh(16);
+    }
+}
 @mixin font-paragraph{
-    font-family: var(--font-secondary);
+    font-family: var(--font-roboto);
     font-size: vw(16);
     line-height: 100%;
     font-weight: 300;
     color:var(--color-white);
+    @include mobile-rem{
+        font-size: rem(16);
+    }
     @include desktop-vh{
         font-size: vh(16);
     }
 }
 @mixin font-label{
-    font-family: var(--font-secondary);
+    font-family: var(--font-roboto);
     font-size: vw(16);
     line-height: 100%;
     font-weight: 500;
     color:var(--color-white);
     @content;
+    @include mobile-rem{
+        font-size: rem(16);
+    }
     @include desktop-vh{
         font-size: vh(16);
     }
 }
 @mixin font-cta{
-    font-family: var(--font-primary);
+    font-family: var(--font-raleway);
     font-size: vw(16);
     line-height: 100%;
-    font-weight: normal;
+    font-weight: 300;
     color:var(--color-white);
     @content;
+    @include mobile-rem{
+        font-size: rem(16);
+    }
     @include desktop-vh{
         font-size: vh(16);
+    }
+}
+@mixin font-cta-popup{
+    font-family: var(--font-raleway);
+    font-size: vw(20);
+    line-height: 100%;
+    font-weight: 300;
+    color:var(--color-white);
+    @content;
+    @include mobile-rem{
+        font-size: rem(18);
+    }
+    @include desktop-vh{
+        font-size: vh(20);
     }
 }
 @mixin reset-button{

@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 export default function Header(){
     return(
-        <>
             <header className={styles.header}>
                 <nav className={styles.header__nav}>
                     <Link href="/">
@@ -41,56 +40,99 @@ export default function Header(){
                             </button>
                         </li>
                     </ul>
+                    <button className={styles.header__nav__btn__mobile}>
+                        <svg className={styles.header__nav__btn__mobile__svg} viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z" fill="white"/>
+                        </svg>
+                    </button>
                 </nav>
+                <div className={styles.header__popup__background}></div>
                 <div className={styles.header__popup}>
-                    <button>X</button>
-                    <div>
-                        <button>Voir les salles favorites</button>
-                        <ul>
-                            <li>
-                                [svg stars]
-                                Salle A625
-                            </li>
-                            <li>
-                                [svg stars]
-                                Salle A260
-                            </li>
-                            <li>
-                                [svg stars]
-                                Salle A480
-                            </li>
-                        </ul>
+                        <button class={styles.header__popup__close__btn}>
+                            <svg class={styles.header__popup__close__svg} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="white"/>
+                            </svg>
+
+                        </button>
+                        <div className={styles.header__popup__content}>
+                            <button className={styles.header__popup__content__label}>Voir les salles favorites
+                                <svg className={styles.header__popup__content__label__svg} viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 0L0 6L1.41 7.41L6 2.83L10.59 7.41L12 6L6 0Z" fill="white"/>
+                                </svg>
+
+                            </button>
+                            <ul className={styles.header__popup__content__list}>
+                                <li className={styles.header__popup__content__list__item}>
+                                    <button>
+                                        <svg className={styles.header__popup__content__list__item__svg} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.0003 14.392L15.1503 17.5003L13.7837 11.642L18.3337 7.70033L12.342 7.19199L10.0003 1.66699L7.65866 7.19199L1.66699 7.70033L6.21699 11.642L4.85033 17.5003L10.0003 14.392Z" fill="#F6E015"/>
+                                        </svg>
+                                    </button>
+                                    Salle A625
+                                </li>
+                                <li className={styles.header__popup__content__list__item}>
+                                    <button>
+                                        <svg className={styles.header__popup__content__list__item__svg} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.0003 14.392L15.1503 17.5003L13.7837 11.642L18.3337 7.70033L12.342 7.19199L10.0003 1.66699L7.65866 7.19199L1.66699 7.70033L6.21699 11.642L4.85033 17.5003L10.0003 14.392Z" fill="#F6E015"/>
+                                        </svg>
+                                    </button>
+                                    Salle A260
+                                </li>
+                                <li className={styles.header__popup__content__list__item}>
+                                    <button>
+                                        <svg className={styles.header__popup__content__list__item__svg} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.0003 14.392L15.1503 17.5003L13.7837 11.642L18.3337 7.70033L12.342 7.19199L10.0003 1.66699L7.65866 7.19199L1.66699 7.70033L6.21699 11.642L4.85033 17.5003L10.0003 14.392Z" fill="#F6E015"/>
+                                        </svg>
+                                    </button>
+                                    Salle A480
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={styles.header__popup__content}>
+                            <button className={styles.header__popup__content__label}>Voir la liste des salles
+                                <svg className={styles.header__popup__content__label__svg} viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 0L0 6L1.41 7.41L6 2.83L10.59 7.41L12 6L6 0Z" fill="white"/>
+                                </svg>
+                            </button>
+                            <ul className={styles.header__popup__content__list}>
+                                <li className={styles.header__popup__content__list__item}>
+                                    <button>
+                                        <svg className={styles.header__popup__content__list__item__svg} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.0003 14.392L15.1503 17.5003L13.7837 11.642L18.3337 7.70033L12.342 7.19199L10.0003 1.66699L7.65866 7.19199L1.66699 7.70033L6.21699 11.642L4.85033 17.5003L10.0003 14.392Z" fill="#F6E015"/>
+                                        </svg>
+                                    </button>
+                                    Salle A625
+                                </li>
+                                <li className={styles.header__popup__content__list__item}>
+                                    <button>
+                                        <svg className={styles.header__popup__content__list__item__svg} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.0003 14.392L15.1503 17.5003L13.7837 11.642L18.3337 7.70033L12.342 7.19199L10.0003 1.66699L7.65866 7.19199L1.66699 7.70033L6.21699 11.642L4.85033 17.5003L10.0003 14.392Z" fill="#F6E015"/>
+                                        </svg>
+                                    </button>
+                                    
+                                    Salle A260
+                                </li>
+                                <li className={styles.header__popup__content__list__item}>
+                                    <button>
+                                        <svg className={styles.header__popup__content__list__item__svg} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.0003 14.392L15.1503 17.5003L13.7837 11.642L18.3337 7.70033L12.342 7.19199L10.0003 1.66699L7.65866 7.19199L1.66699 7.70033L6.21699 11.642L4.85033 17.5003L10.0003 14.392Z" fill="#F6E015"/>
+                                        </svg>
+                                    </button>
+                                    Salle A480
+                                </li>
+                            </ul>
+                        </div>                   
+                        <div className={styles.header__popup__info}>
+                            <div className={styles.header__popup__info__progressBar}>
+                                <div className={styles.header__popup__info__progressBar__currentProgress}></div>
+                            </div>
+                            <div className={styles.header__popup__info__content__wrapper}>
+                                <p className={styles.header__popup__info__content}>Cette salle à été supprimée de vos favoris</p>
+                                <button className={styles.header__popup__info__btn__cancel}>ANNULER</button>
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div>
-                        <button>Voir la liste des salles</button>
-                        <ul>
-                            <li>
-                                [svg stars]
-                                Salle A625
-                            </li>
-                            <li>
-                                [svg stars]
-                                Salle A260
-                            </li>
-                            <li>
-                                [svg stars]
-                                Salle A480
-                            </li>
-                        </ul>
-                    </div>                   
-                    <div>
-                        <div>[progressBar]</div>
-                        <p>Cette salle à été supprimée de vos favoris</p>
-                        <button>ANNULER</button>
-                    </div>
-                </div>
             </header>
-            {/* <style jsx>{`
-                header{
-                    position:sticky;
-                    top:0;
-                }
-            `}</style> */}
-        </>
     )
 }

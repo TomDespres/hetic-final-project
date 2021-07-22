@@ -164,6 +164,129 @@
             margin: 0 rem(17);
         }
     }
+    .map{
+        &__wrapper{
+            position: absolute;
+            top:0;
+            left:0;
+            margin-left:0;
+            margin-right:0;
+            margin-top: 0;
+            width: 100%;
+            height: 100vh;
+            border-radius: initial;
+            background: rgb(27,27,27);
+            background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(48,48,48,1) 25%, rgba(85,85,85,1) 100%);
+            &:after{
+                content:'';
+                position: absolute;
+                width: rem(324);
+                height: rem(224);
+                left: 0;
+                top: 0;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.7) 42.19%, rgba(61, 59, 59, 0) 100%);
+            }
+        }
+        top:50%;
+        left: 50%;
+        transform:translate3d(-50%,-50%,0);
+        width:rem(1000);
+        &__marker{
+            z-index: 1;
+            transform: translate3d(-50%,-50%,0);
+            padding:rem(16);
+            width:rem(200);
+            border-radius: rem(16);
+            &__contentList{
+                &__item{
+                    margin-bottom: rem(8);
+                }
+                &__availability{
+                    &__svg{
+                        margin-right:rem(8);
+                        width:rem(14);
+                        height:rem(14);
+                    }
+                }
+            }
+            &__btn{
+                top:rem(24.59);
+                right:rem(22);
+                width:rem(12);
+                height:rem(7.41);
+            }
+            &__arrowBottom{
+                width:rem(36);
+            }
+        }
+        &__info__slider{
+            position: absolute;
+            bottom: 0;
+            left:0;
+            display: flex;
+            align-items: flex-end;
+            margin-left: rem(16);
+
+            &__pagination{
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                z-index: 100;
+                bottom:rem(16);
+                left:rem(144);
+                transform: translate3d(-50%,0,0);
+                &__round{
+                    width:rem(8);
+                    height: rem(8);
+                    border-radius: 50%;
+                    background-color: var(--color-yellow);
+                    opacity: .5;
+                    margin:0 rem(4);
+                    &__selected{
+                        opacity:1;
+                    }
+                }
+            }
+        }
+        &__stats{
+            order:2;
+            position: relative;
+            top:0;
+            left:0;
+            margin-bottom:rem(32);
+            margin-left:rem(7);
+            padding:rem(16);
+            width:rem(322);
+            border-radius: rem(16);
+            &__stick{
+                &__container{
+                    margin-top:rem(24);
+                }
+                margin-right:rem(7);
+                width:rem(18);
+                height:rem(60);
+                &:last-of-type{
+                    margin-right:rem(0);
+                    height:rem(6);
+                }
+            }
+            &__day{
+                margin: 0 rem(5.8);
+            }
+        }
+        &__average{
+            position: relative;
+            top:0;
+            left:0;
+            padding:rem(16);
+            width:rem(256);
+            border-radius: rem(16);
+            margin-bottom:rem(32);
+            &__content{
+                margin-top:rem(4);
+            }
+        }
+    }
 }
 @include desktop-vh{
     .pagination__svg{
