@@ -179,6 +179,7 @@
             background: linear-gradient(180deg, rgba(27,27,27,1) 0%, rgba(48,48,48,1) 25%, rgba(85,85,85,1) 100%);
             &:after{
                 content:'';
+                pointer-events: none;
                 position: absolute;
                 width: rem(324);
                 height: rem(224);
