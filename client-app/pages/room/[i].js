@@ -129,6 +129,7 @@ function RoomSvg({room}) {
     },
     {
       domTarget: roomRef,
+      useTouch:true,
     }
     
   )
@@ -140,6 +141,7 @@ function RoomSvg({room}) {
       return  <svg  ref={roomRef} 
                     style={{
                       transform: 'translate3d(calc(-50% + '+crop.x+'px), calc(-50% + '+crop.y+'px),0)',
+                      touchAction: 'none'
                     }}
                     className={styles.map} viewBox="0 0 3536 2042" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect y="1.99987" width="2445.44" height="1628.96" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1415.95 1)" fill="black" stroke="#F4C113" strokeWidth="4"/>

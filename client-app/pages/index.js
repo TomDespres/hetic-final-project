@@ -3,7 +3,26 @@ import Image from 'next/image'
 import picture from '../assets/images/room.png'
 import Link from 'next/link'
 
+import { useRef,useState } from "react";
+
+import { useGesture } from 'react-use-gesture'
+
+
 export default function Home() {
+  let [crop, setCrop] = useState({ x: 0, y: 0, scale: 1 });
+  const mapRef = useRef();
+  useGesture(
+    {
+      onDrag: ({ offset: [dx, dy] }) => {
+        setCrop((crop) => ({ ...crop, x: dx, y: dy }));
+      },
+    },
+    {
+      domTarget: mapRef,
+      useTouch:true,
+    }
+    
+  )
   return (
     <div className={styles.wrapper}>
       <main className={styles.main}>
@@ -21,7 +40,16 @@ export default function Home() {
           </button> */}
         </div>
         <div className={styles.map__wrapper}>
-          <svg className={styles.map} viewBox="0 0 9285 5353" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg  ref={mapRef} 
+                style={{
+                  transform: 'translate3d(calc(-50% + '+crop.x+'px), calc(-50% + '+crop.y+'px),0)',
+                  touchAction: 'none'
+                }} 
+                className={styles.map} 
+                viewBox="0 0 9285 5353" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+          >
             <Link href={`/room/A620`}>
               <a>
                 <rect className={styles.map__room} y="11.9992" width="2425.44" height="1608.96" transform="matrix(0.866044 0.499967 -0.866044 0.499967 7173.61 976)" fill="black" stroke="#F6E015" strokeWidth="24"/>
