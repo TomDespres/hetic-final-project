@@ -20,7 +20,7 @@ html,
 body {
   background-color: var(--color-black);
   color:var(--color-white);
-  width:100%;
+  width:100vw;
   height:100vh;
   overflow: hidden;
   padding: 0;
@@ -62,7 +62,9 @@ input,
 textarea,
 button,
 select,
-a {
+a,
+rect,
+path {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 h1,h2,h3,h4,h5{
