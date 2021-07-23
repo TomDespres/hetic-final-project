@@ -126,10 +126,13 @@ function RoomSvg({room}) {
         console.log(dx,dy);
         setCrop((crop) => ({ ...crop, x: dx, y: dy }));
       },
+      onPinch: ({ offset: [d] }) => {
+        setCrop((crop) => ({ ...crop, scale: 1 + d / 50 }));
+      },
     },
     {
       domTarget: roomRef,
-      useTouch:true,
+      eventOptions: { passive: false },
     }
     
   )
@@ -140,7 +143,7 @@ function RoomSvg({room}) {
     case 'A620':
       return  <svg  ref={roomRef} 
                     style={{
-                      transform: 'translate3d(calc(-50% + '+crop.x+'px), calc(-50% + '+crop.y+'px),0)',
+                      transform: 'translate3d(calc(-50% + '+crop.x+'px), calc(-50% + '+crop.y+'px),0) scale('+crop.scale+')',
                       touchAction: 'none'
                     }}
                     className={styles.map} viewBox="0 0 3536 2042" fill="none" xmlns="http://www.w3.org/2000/svg">
