@@ -150,7 +150,7 @@ export default function Home() {
           
           {/* desktop */}
           <div ref={markersDesktopRef}>
-            <div className={styles.map__marker+" "+styles.map__marker__selected+" "+styles.map__marker__1+" "+styles.map__marker__desktop}>
+            <div className={styles.map__marker+" "+styles.map__marker__disabled+" "+styles.map__marker__selected+" "+styles.map__marker__1+" "+styles.map__marker__desktop}>
               <div className={styles.map__marker__img__wrapper}>
                 <Image className={styles.map__marker__img} src={picture}/>
               </div>
@@ -160,10 +160,10 @@ export default function Home() {
 
               <ul className={styles.map__marker__contentList}>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Salle : <span>A625</span></p>
+                  <p>Salle : <span>A620</span></p>
                 </li>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Places : <span>12 libres / 20</span></p>
+                  <p>Places : <span>0 libre / 0</span></p>
                 </li>
               </ul>
               <Link href={`/room/A620`}>
@@ -177,7 +177,7 @@ export default function Home() {
                 <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
               </svg>
             </div>
-            <div className={styles.map__marker+" "+styles.map__marker__2+" "+styles.map__marker__desktop}>
+            <div className={styles.map__marker+" "+styles.map__marker__disabled+" "+styles.map__marker__2+" "+styles.map__marker__desktop}>
               <div className={styles.map__marker__img__wrapper}>
                 <Image className={styles.map__marker__img} src={picture}/>
               </div>
@@ -187,22 +187,24 @@ export default function Home() {
 
               <ul className={styles.map__marker__contentList}>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Salle : <span>A625</span></p>
+                  <p>Salle : <span>A621</span></p>
                 </li>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Places : <span>12 libres / 20</span></p>
+                  <p>Places : <span>0 libre / 0</span></p>
                 </li>
               </ul>
-              <button className={styles.map__marker__btn}>
-                <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
-                </svg>
-              </button>
+              <Link href={`/room/A621`}>
+                <a className={styles.map__marker__btn}>
+                  <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
+                  </svg>
+                </a>
+              </Link>
               <svg className={styles.map__marker__arrowBottom} viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
               </svg>
             </div>
-            <div className={styles.map__marker+" "+styles.map__marker__3+" "+styles.map__marker__desktop}>
+            <div className={styles.map__marker+" "+styles.map__marker__disabled+" "+styles.map__marker__3+" "+styles.map__marker__desktop}>
               <div className={styles.map__marker__img__wrapper}>
                 <Image className={styles.map__marker__img} src={picture}/>
               </div>
@@ -212,22 +214,24 @@ export default function Home() {
 
               <ul className={styles.map__marker__contentList}>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Salle : <span>A625</span></p>
+                  <p>Salle : <span>A622</span></p>
                 </li>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Places : <span>12 libres / 20</span></p>
+                  <p>Places : <span>0 libre / 0</span></p>
                 </li>
               </ul>
-              <button className={styles.map__marker__btn}>
-                <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
-                </svg>
-              </button>
+              <Link href={`/room/A622`}>
+                <a className={styles.map__marker__btn}>
+                  <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
+                  </svg>
+                </a>
+              </Link>
               <svg className={styles.map__marker__arrowBottom} viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
               </svg>
             </div>
-            <div className={styles.map__marker+" "+styles.map__marker__4+" "+styles.map__marker__desktop}>
+            <div className={styles.map__marker+" "+styles.map__marker__disabled+" "+styles.map__marker__4+" "+styles.map__marker__desktop}>
               <div className={styles.map__marker__img__wrapper}>
                 <Image className={styles.map__marker__img} src={picture}/>
               </div>
@@ -237,46 +241,50 @@ export default function Home() {
 
               <ul className={styles.map__marker__contentList}>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Salle : <span>A625</span></p>
+                  <p>Salle : <span>A623</span></p>
                 </li>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Places : <span>12 libres / 20</span></p>
+                  <p>Places : <span>0 libre / 0</span></p>
                 </li>
               </ul>
-              <button className={styles.map__marker__btn}>
-                <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
-                </svg>
-              </button>
+              <Link href={`/room/A623`}>
+                <a className={styles.map__marker__btn}>
+                  <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
+                  </svg>
+                </a>
+              </Link>
               <svg className={styles.map__marker__arrowBottom} viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
               </svg>
             </div>
             <div className={styles.map__marker+" "+styles.map__marker__5+" "+styles.map__marker__desktop}>
-            <div className={styles.map__marker__img__wrapper}>
-              <Image className={styles.map__marker__img} src={picture}/>
-            </div>
-            <svg className={styles.map__marker__sound} width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11 3.97V12.02C12.48 11.29 13.5 9.77 13.5 8C13.5 6.23 12.48 4.71 11 3.97ZM0 5V11H4L9 16V0L4 5H0ZM7 4.83V11.17L4.83 9H2V7H4.83L7 4.83Z" fill="white"/>
-            </svg>
-
-            <ul className={styles.map__marker__contentList}>
-              <li className={styles.map__marker__contentList__item}>
-                <p>Salle : <span>A625</span></p>
-              </li>
-              <li className={styles.map__marker__contentList__item}>
-                <p>Places : <span>12 libres / 20</span></p>
-              </li>
-            </ul>
-            <button className={styles.map__marker__btn}>
-              <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
+              <div className={styles.map__marker__img__wrapper}>
+                <Image className={styles.map__marker__img} src={picture}/>
+              </div>
+              <svg className={styles.map__marker__sound} width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 3.97V12.02C12.48 11.29 13.5 9.77 13.5 8C13.5 6.23 12.48 4.71 11 3.97ZM0 5V11H4L9 16V0L4 5H0ZM7 4.83V11.17L4.83 9H2V7H4.83L7 4.83Z" fill="white"/>
               </svg>
-            </button>
-            <svg className={styles.map__marker__arrowBottom} viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
-            </svg>
-          </div>
+
+              <ul className={styles.map__marker__contentList}>
+                <li className={styles.map__marker__contentList__item}>
+                  <p>Salle : <span>A624</span></p>
+                </li>
+                <li className={styles.map__marker__contentList__item}>
+                  <p>Places : <span>12 libres / 20</span></p>
+                </li>
+              </ul>
+              <Link href={`/room/A624`}>
+                <a className={styles.map__marker__btn}>
+                  <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
+                  </svg>
+                </a>
+              </Link>
+              <svg className={styles.map__marker__arrowBottom} viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
+              </svg>
+            </div>
           </div>
 
           {/* mobile */}
@@ -298,17 +306,19 @@ export default function Home() {
 
               <ul className={styles.map__marker__contentList}>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Salle : <span>A625</span></p>
+                  <p>Salle : <span>A620</span></p>
                 </li>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Places : <span>12 libres / 20</span></p>
+                  <p>Places : <span>0 libre / 0</span></p>
                 </li>
               </ul>
-              <button className={styles.map__marker__btn}>
-                <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
-                </svg>
-              </button>
+              <Link href={`/room/A620`}>
+                <a className={styles.map__marker__btn}>
+                  <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
+                  </svg>
+                </a>
+              </Link>
               <svg className={styles.map__marker__arrowBottom} viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
               </svg>
@@ -323,17 +333,19 @@ export default function Home() {
 
               <ul className={styles.map__marker__contentList}>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Salle : <span>A625</span></p>
+                  <p>Salle : <span>A621</span></p>
                 </li>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Places : <span>12 libres / 20</span></p>
+                  <p>Places : <span>0 libre / 0</span></p>
                 </li>
               </ul>
-              <button className={styles.map__marker__btn}>
-                <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
-                </svg>
-              </button>
+              <Link href={`/room/A621`}>
+                <a className={styles.map__marker__btn}>
+                  <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
+                  </svg>
+                </a>
+              </Link>
               <svg className={styles.map__marker__arrowBottom} viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
               </svg>
@@ -348,17 +360,19 @@ export default function Home() {
 
               <ul className={styles.map__marker__contentList}>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Salle : <span>A625</span></p>
+                  <p>Salle : <span>A622</span></p>
                 </li>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Places : <span>12 libres / 20</span></p>
+                  <p>Places : <span>0 libre / 0</span></p>
                 </li>
               </ul>
-              <button className={styles.map__marker__btn}>
-                <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
-                </svg>
-              </button>
+              <Link href={`/room/A622`}>
+                <a className={styles.map__marker__btn}>
+                  <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
+                  </svg>
+                </a>
+              </Link>
               <svg className={styles.map__marker__arrowBottom} viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
               </svg>
@@ -373,17 +387,19 @@ export default function Home() {
 
               <ul className={styles.map__marker__contentList}>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Salle : <span>A625</span></p>
+                  <p>Salle : <span>A623</span></p>
                 </li>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Places : <span>12 libres / 20</span></p>
+                  <p>Places : <span>0 libre / 0</span></p>
                 </li>
               </ul>
-              <button className={styles.map__marker__btn}>
-                <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
-                </svg>
-              </button>
+              <Link href={`/room/A623`}>
+                <a className={styles.map__marker__btn}>
+                  <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
+                  </svg>
+                </a>
+              </Link>
               <svg className={styles.map__marker__arrowBottom} viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
               </svg>
@@ -398,17 +414,19 @@ export default function Home() {
 
               <ul className={styles.map__marker__contentList}>
                 <li className={styles.map__marker__contentList__item}>
-                  <p>Salle : <span>A625</span></p>
+                  <p>Salle : <span>A624</span></p>
                 </li>
                 <li className={styles.map__marker__contentList__item}>
                   <p>Places : <span>12 libres / 20</span></p>
                 </li>
               </ul>
-              <button className={styles.map__marker__btn}>
-                <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
-                </svg>
-              </button>
+              <Link href={`/room/A624`}>
+                <a className={styles.map__marker__btn}>
+                  <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.99967 0.666992V3.33366H15.7863L0.333008 18.787L2.21301 20.667L17.6663 5.21366V14.0003H20.333V0.666992H6.99967Z" fill="white"/>
+                  </svg>
+                </a>
+              </Link>
               <svg className={styles.map__marker__arrowBottom} viewBox="0 0 36 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
               </svg>
