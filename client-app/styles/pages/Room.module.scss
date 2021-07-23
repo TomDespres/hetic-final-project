@@ -228,8 +228,7 @@
             display: flex;
             align-items: flex-end;
             margin-left: rem(16);
-            pointer-events: none;
-
+            touch-action: none;
             &__pagination{
                 display: flex;
                 justify-content: center;
@@ -252,6 +251,9 @@
             }
         }
         &__stats{
+            &__centered{
+                transform: translate3d(#{rem(-269)},0,0);
+            }
             order:2;
             position: relative;
             top:0;
@@ -259,8 +261,9 @@
             margin-bottom:rem(32);
             margin-left:rem(7);
             padding:rem(16);
-            width:rem(322);
+            width:rem(300);
             border-radius: rem(16);
+            transition: transform .6s cubic-bezier(0.075, 0.82, 0.165, 1);
             &__stick{
                 &__container{
                     margin-top:rem(24);
@@ -278,6 +281,9 @@
             }
         }
         &__average{
+            &__hide{
+                transform: translate3d(#{rem(-272)},0,0);
+            }
             position: relative;
             top:0;
             left:0;
@@ -285,6 +291,7 @@
             width:rem(256);
             border-radius: rem(16);
             margin-bottom:rem(32);
+            transition: transform .6s cubic-bezier(0.075, 0.82, 0.165, 1);
             &__content{
                 margin-top:rem(4);
             }

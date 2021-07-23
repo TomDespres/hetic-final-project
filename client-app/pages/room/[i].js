@@ -12,25 +12,34 @@ export default function Home(props) {
   const rooms = ['A620','A621','A622','A623','A624'];
   var currentRoomIndex = rooms.indexOf(room);
 
-  // const bind = useDrag(state => doSomethingWith(state), config)
-  // const bind = useDrag(state => console.log(state));
-
-  // useEffect(() => {
-  //   // console.log(router)
-  //   // console.log(room)
-  // },[]);
-  // const mapRef = useRef();
-  // useGesture(
-  //   {
-  //     onDrag: ()=>{
-  //       console.log('dragging here');
-  //     },
-  //   },
-  //   {
-  //     domTarget: mapRef,
-  //   }
-    
-  // )
+  //slider
+  let [sliderCrop, setSliderCrop] = useState({ x: 0, y: 0, scale: 1 });
+  let sliderRef = useRef();
+  let paginationRef = useRef();
+  let statsRef = useRef();
+  let averageRef = useRef();
+  useGesture(
+    {
+      onDrag: ({movement: [mx]}) => {
+        if(mx < -50){
+          statsRef.current.classList.add(styles.map__stats__centered);
+          averageRef.current.classList.add(styles.map__average__hide);
+          paginationRef.current.childNodes[0].classList.remove(styles.map__info__slider__pagination__round__selected)
+          paginationRef.current.childNodes[1].classList.add(styles.map__info__slider__pagination__round__selected)
+        }
+        if(mx > 50){
+          statsRef.current.classList.remove(styles.map__stats__centered);
+          averageRef.current.classList.remove(styles.map__average__hide);
+          paginationRef.current.childNodes[0].classList.add(styles.map__info__slider__pagination__round__selected)
+          paginationRef.current.childNodes[1].classList.remove(styles.map__info__slider__pagination__round__selected)
+        }
+      },
+    },
+    {
+      domTarget: sliderRef,
+      eventOptions: { passive: false },
+    }
+  )
 
   return (
     <div className={styles.wrapper}>
@@ -67,12 +76,12 @@ export default function Home(props) {
               <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
             </svg>
           </div> 
-          <div className={styles.map__info__slider}>
-            <div className={styles.map__info__slider__pagination}>
+          <div className={styles.map__info__slider} ref={sliderRef}>
+            <div className={styles.map__info__slider__pagination} ref={paginationRef}>
               <div className={styles.map__info__slider__pagination__round+" "+styles.map__info__slider__pagination__round__selected}></div>
               <div className={styles.map__info__slider__pagination__round}></div>
             </div>
-            <div className={styles.map__stats}>
+            <div className={styles.map__stats} ref={statsRef}>
               <h4 className={styles.map__stats__title}>
                 Affluence par 
                 <span className={styles.map__stats__title__hours}> Heure</span> / <span className={styles.map__stats__title__day}>Jour</span>
@@ -103,7 +112,7 @@ export default function Home(props) {
                 <span className={styles.map__stats__day}>19</span>
               </div>
             </div>   
-            <div className={styles.map__average}>
+            <div className={styles.map__average} ref={averageRef}>
               <h4 className={styles.map__average__title}>{`Temps d'affluence moyen`}</h4>
               <p className={styles.map__average__content}>~ 30 min</p>
             </div>
@@ -118,12 +127,12 @@ export default function Home(props) {
 
 // room svg
 function RoomSvg({room}) {
+  //Map
   let [crop, setCrop] = useState({ x: 0, y: 0, scale: 1 });
   const roomRef = useRef();
   useGesture(
     {
       onDrag: ({ offset: [dx, dy] }) => {
-        console.log(dx,dy);
         setCrop((crop) => ({ ...crop, x: dx, y: dy }));
       },
       onPinch: ({ offset: [d] }) => {
@@ -134,11 +143,7 @@ function RoomSvg({room}) {
       domTarget: roomRef,
       eventOptions: { passive: false },
     }
-    
   )
-  // useEffect(()=>{
-  //   // console.log(roomRef.current)
-  // },[])
   switch (room) {
     case 'A620':
       return  <svg  ref={roomRef} 

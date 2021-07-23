@@ -120,22 +120,25 @@
         left: 50%;
         width:rem(443);
         &__marker{
-            &:first-of-type{
+            &__desktop{
                 display: none;
             }
             &__slider{
+                touch-action: none;
                 position: absolute;
                 // z-index: 1;
                 bottom:rem(32);
                 left:rem(16);
                 display: flex;
+                transition: transform .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+
                 &__pagination{
                     display: flex;
                     justify-content: center;
                     position: absolute;
                     z-index: 100;
-                    bottom:rem(-16);
-                    left:rem(144);
+                    bottom:rem(16);
+                    left:rem(160);
                     transform: translate3d(-50%,0,0);
                     &__round{
                         width:rem(8);
