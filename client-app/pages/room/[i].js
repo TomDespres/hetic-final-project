@@ -179,7 +179,12 @@ function RoomSvg({room}) {
               </svg>
       break;
     case 'A621':
-      return  <svg ref={roomRef} className={styles.map} viewBox="0 0 4184 2415" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+      return  <svg  ref={roomRef} 
+                    style={{
+                      transform: 'translate3d(calc(-50% + '+crop.x+'px), calc(-50% + '+crop.y+'px),0)',
+                      touchAction: 'none'
+                    }}
+                    className={styles.map} viewBox="0 0 4184 2415" fill="none" xmlns="http://www.w3.org/2000/svg"> 
                 <path d="M4183.27 1207.5L3137.45 1811.25L2091.63 1207.5L1045.82 1811.25L0.00017125 1207.5L2091.63 -6.4161e-05L4183.27 1207.5Z" fill="black"/>
                 <rect className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 3404.47 990.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M3316.47 1122.17L3294.05 1170.46L3232.82 1135.11L3316.47 1122.17Z" fill="#C4C4C4"/>
@@ -214,7 +219,12 @@ function RoomSvg({room}) {
               </svg>
       break;
     case 'A622':
-      return  <svg ref={roomRef} className={styles.map} viewBox="0 0 3749 2164" fill="none" xmlns="http://www.w3.org/2000/svg">
+      return  <svg  ref={roomRef}
+                    style={{
+                      transform: 'translate3d(calc(-50% + '+crop.x+'px), calc(-50% + '+crop.y+'px),0)',
+                      touchAction: 'none'
+                    }}
+                    className={styles.map} viewBox="0 0 3749 2164" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="3240.27" height="1087.42" transform="matrix(0.866044 -0.499967 0.866044 0.499967 0.681152 1620.03)" fill="black"/>
                 <rect className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2780.47 300.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M2692.47 432.171L2670.05 480.463L2608.82 445.111L2692.47 432.171Z" fill="#C4C4C4"/>
@@ -249,7 +259,12 @@ function RoomSvg({room}) {
               </svg>
       break;
     case 'A623':
-      return  <svg ref={roomRef} className={styles.map} viewBox="0 0 4545 2625" fill="none" xmlns="http://www.w3.org/2000/svg">
+      return  <svg  ref={roomRef}
+                    style={{
+                      transform: 'translate3d(calc(-50% + '+crop.x+'px), calc(-50% + '+crop.y+'px),0)',
+                      touchAction: 'none'
+                    }}
+                    className={styles.map} viewBox="0 0 4545 2625" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1757.61 6.99975L4544.47 1604.41L2786.86 2618.25L-0.000101858 1020.85L1757.61 6.99975Z" fill="black"/>
                 <rect className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2746.47 1854.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M2658.47 1986.17L2636.05 2034.46L2574.81 1999.11L2658.47 1986.17Z" fill="#C4C4C4"/>
@@ -283,7 +298,12 @@ function RoomSvg({room}) {
                 <path d="M2126.1 1186.26L2042.45 1173.32L2103.69 1137.97L2126.1 1186.26Z" fill="#C4C4C4"/>
               </svg>
     case 'A624':
-      return  <svg ref={roomRef} className={styles.map} viewBox="0 0 5198 3001" fill="none" xmlns="http://www.w3.org/2000/svg">
+      return  <svg  ref={roomRef}
+                    style={{
+                      transform: 'translate3d(calc(-50% + '+crop.x+'px), calc(-50% + '+crop.y+'px),0)',
+                      touchAction: 'none'
+                    }}
+                    className={styles.map} viewBox="0 0 5198 3001" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="4162.82" height="1838.3" transform="matrix(0.866044 -0.499967 0.866044 0.499967 0 2081.27)" fill="black"/>
                 <rect className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1363.47 2119.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M1275.47 2251.17L1253.05 2299.46L1191.81 2264.11L1275.47 2251.17Z" fill="#C4C4C4"/>
