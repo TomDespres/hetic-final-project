@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 import { useGesture } from 'react-use-gesture'
+import axios from 'axios'
 
 export default function Home(props) {
   const router = useRouter()
@@ -252,6 +253,85 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
       eventOptions: { passive: false },
     }
   )
+  
+  const [elementsPosition, setElementsPosition] = useState({})
+  const [availableChairs, setAvailableChairs] = useState({})
+
+  
+  const fetchElementsPosition = async () => {
+    const options = {
+      url: 'https://us-west-2-1.aws.cloud2.influxdata.com/api/v2/query?org=najib.tahar-berrabah@hetic.net',
+      method: 'POST',
+      headers: {
+        'Authorization': 'Token cOg0bJOydZSfkVqtW71XbM6KAWe17iPiOFrepj8dEYLuR7WBZItrKHfHO2nGz0SIMBbCyx0UBBGiEGN2QLU3Og==',
+        'Content-Type': "application/vnd.flux; charset=utf-8"
+      },
+      data: 'from(bucket: "mqtt")\
+              |> range(start: -1h)\
+              |> filter(fn: (r) => r["_measurement"] == "Position")\
+              |> filter(fn: (r) => r["_field"] == "position_x" or r["_field"] == "position_y")\
+              |> aggregateWindow(every: 1s, fn: last)\
+              |> last()'
+    }
+    const {data} = await axios(options)
+    
+    const lines = data.split(/\r\n|\n/);
+    const chairsAndTables = lines.map((line, index) => {
+      if(index % 2 === 0) return
+      const arrayLine = line.split(',');
+      const nextArrayLine = lines[index+1].split(',');
+
+      return {
+        time: arrayLine[5],
+        node_ID: arrayLine[7],
+        position_x: arrayLine[6],
+        position_y: nextArrayLine[6],
+      }
+    }).filter(line => line != undefined && line.node_ID != undefined)
+    setElementsPosition(chairsAndTables)
+    console.log(chairsAndTables)
+  }
+
+  const fetchAvailableChairs = async () => {
+    const options = {
+      url: 'https://us-west-2-1.aws.cloud2.influxdata.com/api/v2/query?org=najib.tahar-berrabah@hetic.net',
+      method: 'POST',
+      headers: {
+        'Authorization': 'Token cOg0bJOydZSfkVqtW71XbM6KAWe17iPiOFrepj8dEYLuR7WBZItrKHfHO2nGz0SIMBbCyx0UBBGiEGN2QLU3Og==',
+        'Content-Type': "application/vnd.flux; charset=utf-8"
+      },
+      data: 'from(bucket: "mqtt")\
+              |> range(start: -1h)\
+              |> filter(fn: (r) => r["_measurement"] == "Poids" and r["_field"] == "weight")\
+              |> map(fn: (r) => ({\
+                r with\
+                available:\
+                  if r._value >= 30 then false\
+                  else true\
+                }))\
+              |> aggregateWindow(every: 1s, fn: last)\
+              |> last()'
+    }
+    const {data} = await axios(options)
+    const lines = data.split(/\r\n|\n/);
+    const availableChairs = lines.map((line, index) => {
+      if(index === 0) return
+      const arrayLine = line.split(',');
+
+      return {
+        time: arrayLine[8],
+        node_ID: arrayLine[3],
+        available: arrayLine[10],
+      }
+    }).filter(line => line != undefined && line.node_ID != undefined)
+    setAvailableChairs(availableChairs)
+    console.log(availableChairs)
+  }
+  useEffect(()=> {
+    fetchElementsPosition()
+    fetchAvailableChairs()
+  }, [])
+
   const selectTable = (e)=>{
     roomRef.current.querySelectorAll(".map__table").forEach((table)=>{
       table.classList.remove(styles.map__table__selected);
