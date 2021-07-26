@@ -342,31 +342,31 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
                     }}
                     className={styles.map} viewBox="0 0 4184 2415" fill="none" xmlns="http://www.w3.org/2000/svg"> 
                 <path d="M4183.27 1207.5L3137.45 1811.25L2091.63 1207.5L1045.82 1811.25L0.00017125 1207.5L2091.63 -6.4161e-05L4183.27 1207.5Z" fill="black"/>
-                <rect data-table="0" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 3404.47 990.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="0" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 3404.47 990.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M3316.47 1122.17L3294.05 1170.46L3232.82 1135.11L3316.47 1122.17Z" fill="#C4C4C4"/>
                 <path d="M3619.11 1094.41L3641.52 1046.12L3702.76 1081.47L3619.11 1094.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M3443.75 1195.65L3421.33 1243.94L3360.09 1208.59L3443.75 1195.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M3491.83 1020.93L3514.24 972.643L3575.48 1007.99L3491.83 1020.93Z" fill="#C4C4C4"/>
                 <path d="M3310.1 1017.26L3226.45 1004.32L3287.69 968.969L3310.1 1017.26Z" fill="#C4C4C4"/>
-                <rect data-table="1" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2903.47 699.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="1" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2903.47 699.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M2815.47 831.171L2793.05 879.463L2731.82 844.111L2815.47 831.171Z" fill="#C4C4C4"/>
                 <path d="M3118.11 803.413L3140.52 755.121L3201.76 790.473L3118.11 803.413Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2942.75 904.65L2920.33 952.942L2859.09 917.59L2942.75 904.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2990.83 729.935L3013.24 681.643L3074.48 716.995L2990.83 729.935Z" fill="#C4C4C4"/>
                 <path d="M2809.1 726.261L2725.45 713.321L2786.69 677.969L2809.1 726.261Z" fill="#C4C4C4"/>
-                <rect data-table="2" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2387.47 380.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="2" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2387.47 380.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M2299.47 512.171L2277.05 560.463L2215.82 525.111L2299.47 512.171Z" fill="#C4C4C4"/>
                 <path d="M2602.11 484.413L2624.52 436.121L2685.76 471.473L2602.11 484.413Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2426.75 585.65L2404.33 633.942L2343.09 598.59L2426.75 585.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2474.83 410.935L2497.24 362.643L2558.48 397.995L2474.83 410.935Z" fill="#C4C4C4"/>
                 <path d="M2293.1 407.261L2209.45 394.321L2270.69 358.969L2293.1 407.261Z" fill="#C4C4C4"/>
-                <rect data-table="3" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1299.47 757.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="3" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1299.47 757.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M1211.47 889.171L1189.05 937.463L1127.82 902.111L1211.47 889.171Z" fill="#C4C4C4"/>
                 <path d="M1514.11 861.413L1536.52 813.121L1597.76 848.473L1514.11 861.413Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1338.75 962.65L1316.33 1010.94L1255.09 975.59L1338.75 962.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1386.83 787.935L1409.24 739.643L1470.48 774.995L1386.83 787.935Z" fill="#C4C4C4"/>
                 <path d="M1205.1 784.261L1121.45 771.321L1182.69 735.969L1205.1 784.261Z" fill="#C4C4C4"/>
-                <rect data-table="4" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 859.465 1017.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="4" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 859.465 1017.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M771.466 1149.17L749.052 1197.46L687.815 1162.11L771.466 1149.17Z" fill="#C4C4C4"/>
                 <path d="M1074.11 1121.41L1096.52 1073.12L1157.76 1108.47L1074.11 1121.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M898.745 1222.65L876.331 1270.94L815.094 1235.59L898.745 1222.65Z" fill="white" fillOpacity="0.3"/>
@@ -382,31 +382,31 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
                     }}
                     className={styles.map} viewBox="0 0 3749 2164" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="3240.27" height="1087.42" transform="matrix(0.866044 -0.499967 0.866044 0.499967 0.681152 1620.03)" fill="black"/>
-                <rect data-table="0" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2780.47 300.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="0" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2780.47 300.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M2692.47 432.171L2670.05 480.463L2608.82 445.111L2692.47 432.171Z" fill="#C4C4C4"/>
                 <path d="M2995.11 404.413L3017.52 356.121L3078.76 391.473L2995.11 404.413Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2819.75 505.65L2797.33 553.942L2736.09 518.59L2819.75 505.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2867.83 330.935L2890.24 282.643L2951.48 317.995L2867.83 330.935Z" fill="#C4C4C4"/>
                 <path d="M2686.1 327.261L2602.45 314.321L2663.69 278.969L2686.1 327.261Z" fill="#C4C4C4"/>
-                <rect data-table="1" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2337.47 558.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="1" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2337.47 558.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M2249.47 690.172L2227.05 738.464L2165.82 703.111L2249.47 690.172Z" fill="#C4C4C4"/>
                 <path d="M2552.11 662.413L2574.52 614.121L2635.76 649.473L2552.11 662.413Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2376.75 763.65L2354.33 811.942L2293.09 776.59L2376.75 763.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2424.83 588.935L2447.24 540.643L2508.48 575.995L2424.83 588.935Z" fill="#C4C4C4"/>
                 <path d="M2243.1 585.261L2159.45 572.321L2220.69 536.969L2243.1 585.261Z" fill="#C4C4C4"/>
-                <rect data-table="2" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1902.47 816.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="2" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1902.47 816.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M1814.47 948.172L1792.05 996.464L1730.82 961.111L1814.47 948.172Z" fill="#C4C4C4"/>
                 <path d="M2117.11 920.413L2139.52 872.121L2200.76 907.473L2117.11 920.413Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1941.75 1021.65L1919.33 1069.94L1858.09 1034.59L1941.75 1021.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1989.83 846.935L2012.24 798.643L2073.48 833.995L1989.83 846.935Z" fill="#C4C4C4"/>
                 <path d="M1808.1 843.261L1724.45 830.321L1785.69 794.969L1808.1 843.261Z" fill="#C4C4C4"/>
-                <rect data-table="3" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1452.47 1074.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="3" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1452.47 1074.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M1364.47 1206.17L1342.05 1254.46L1280.81 1219.11L1364.47 1206.17Z" fill="#C4C4C4"/>
                 <path d="M1667.11 1178.41L1689.52 1130.12L1750.76 1165.47L1667.11 1178.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1491.75 1279.65L1469.33 1327.94L1408.09 1292.59L1491.75 1279.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1539.83 1104.93L1562.24 1056.64L1623.48 1091.99L1539.83 1104.93Z" fill="#C4C4C4"/>
                 <path d="M1358.1 1101.26L1274.45 1088.32L1335.69 1052.97L1358.1 1101.26Z" fill="#C4C4C4"/>
-                <rect data-table="4" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1024.47 1332.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="4" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1024.47 1332.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M936.466 1464.17L914.052 1512.46L852.815 1477.11L936.466 1464.17Z" fill="#C4C4C4"/>
                 <path d="M1239.11 1436.41L1261.52 1388.12L1322.76 1423.47L1239.11 1436.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1063.75 1537.65L1041.33 1585.94L980.094 1550.59L1063.75 1537.65Z" fill="white" fillOpacity="0.3"/>
@@ -422,31 +422,31 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
                     }}
                     className={styles.map} viewBox="0 0 4545 2625" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1757.61 6.99975L4544.47 1604.41L2786.86 2618.25L-0.000101858 1020.85L1757.61 6.99975Z" fill="black"/>
-                <rect data-table="0" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2746.47 1854.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="0" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2746.47 1854.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M2658.47 1986.17L2636.05 2034.46L2574.81 1999.11L2658.47 1986.17Z" fill="#C4C4C4"/>
                 <path d="M2961.11 1958.41L2983.52 1910.12L3044.76 1945.47L2961.11 1958.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2785.75 2059.65L2763.33 2107.94L2702.09 2072.59L2785.75 2059.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2833.83 1884.93L2856.24 1836.64L2917.48 1871.99L2833.83 1884.93Z" fill="#C4C4C4"/>
                 <path d="M2652.1 1881.26L2568.45 1868.32L2629.69 1832.97L2652.1 1881.26Z" fill="#C4C4C4"/>
-                <rect data-table="1" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 3379.47 1488.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="1" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 3379.47 1488.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M3291.47 1620.17L3269.05 1668.46L3207.81 1633.11L3291.47 1620.17Z" fill="#C4C4C4"/>
                 <path d="M3594.11 1592.41L3616.52 1544.12L3677.76 1579.47L3594.11 1592.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M3418.75 1693.65L3396.33 1741.94L3335.09 1706.59L3418.75 1693.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M3466.83 1518.93L3489.24 1470.64L3550.48 1505.99L3466.83 1518.93Z" fill="#C4C4C4"/>
                 <path d="M3285.1 1515.26L3201.45 1502.32L3262.69 1466.97L3285.1 1515.26Z" fill="#C4C4C4"/>
-                <rect data-table="2" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1026.47 883.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="2" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1026.47 883.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M938.466 1015.17L916.052 1063.46L854.815 1028.11L938.466 1015.17Z" fill="#C4C4C4"/>
                 <path d="M1241.11 987.413L1263.52 939.121L1324.76 974.473L1241.11 987.413Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1065.75 1088.65L1043.33 1136.94L982.094 1101.59L1065.75 1088.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1113.83 913.935L1136.24 865.643L1197.48 900.995L1113.83 913.935Z" fill="#C4C4C4"/>
                 <path d="M932.103 910.261L848.451 897.321L909.688 861.969L932.103 910.261Z" fill="#C4C4C4"/>
-                <rect data-table="3" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1709.47 467.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="3" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1709.47 467.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M1621.47 599.171L1599.05 647.463L1537.81 612.111L1621.47 599.171Z" fill="#C4C4C4"/>
                 <path d="M1924.11 571.413L1946.52 523.121L2007.76 558.473L1924.11 571.413Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1748.75 672.65L1726.33 720.942L1665.09 685.59L1748.75 672.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1796.83 497.935L1819.24 449.643L1880.48 484.995L1796.83 497.935Z" fill="#C4C4C4"/>
                 <path d="M1615.1 494.261L1531.45 481.321L1592.69 445.969L1615.1 494.261Z" fill="#C4C4C4"/>
-                <rect data-table="4" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2220.47 1159.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="4" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2220.47 1159.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M2132.47 1291.17L2110.05 1339.46L2048.81 1304.11L2132.47 1291.17Z" fill="#C4C4C4"/>
                 <path d="M2435.11 1263.41L2457.52 1215.12L2518.76 1250.47L2435.11 1263.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2259.75 1364.65L2237.33 1412.94L2176.09 1377.59L2259.75 1364.65Z" fill="white" fillOpacity="0.3"/>
@@ -461,31 +461,31 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
                     }}
                     className={styles.map} viewBox="0 0 5198 3001" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="4162.82" height="1838.3" transform="matrix(0.866044 -0.499967 0.866044 0.499967 0 2081.27)" fill="black"/>
-                <rect data-table="0" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1363.47 2119.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="0" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1363.47 2119.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M1275.47 2251.17L1253.05 2299.46L1191.81 2264.11L1275.47 2251.17Z" fill="#C4C4C4"/>
                 <path d="M1578.11 2223.41L1600.52 2175.12L1661.76 2210.47L1578.11 2223.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1402.75 2324.65L1380.33 2372.94L1319.09 2337.59L1402.75 2324.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1450.83 2149.93L1473.24 2101.64L1534.48 2136.99L1450.83 2149.93Z" fill="#C4C4C4"/>
                 <path d="M1269.1 2146.26L1185.45 2133.32L1246.69 2097.97L1269.1 2146.26Z" fill="#C4C4C4"/>
-                <rect data-table="1" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1705.47 1567.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="1" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1705.47 1567.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M1617.47 1699.17L1595.05 1747.46L1533.81 1712.11L1617.47 1699.17Z" fill="#C4C4C4"/>
                 <path d="M1920.11 1671.41L1942.52 1623.12L2003.76 1658.47L1920.11 1671.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1744.75 1772.65L1722.33 1820.94L1661.09 1785.59L1744.75 1772.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M1792.83 1597.93L1815.24 1549.64L1876.48 1584.99L1792.83 1597.93Z" fill="#C4C4C4"/>
                 <path d="M1611.1 1594.26L1527.45 1581.32L1588.69 1545.97L1611.1 1594.26Z" fill="#C4C4C4"/>
-                <rect data-table="2" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2513.47 1421.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="2" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2513.47 1421.09)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M2425.47 1553.17L2403.05 1601.46L2341.81 1566.11L2425.47 1553.17Z" fill="#C4C4C4"/>
                 <path d="M2728.11 1525.41L2750.52 1477.12L2811.76 1512.47L2728.11 1525.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2552.75 1626.65L2530.33 1674.94L2469.09 1639.59L2552.75 1626.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2600.83 1451.94L2623.24 1403.64L2684.48 1439L2600.83 1451.94Z" fill="#C4C4C4"/>
                 <path d="M2419.1 1448.26L2335.45 1435.32L2396.69 1399.97L2419.1 1448.26Z" fill="#C4C4C4"/>
-                <rect data-table="3" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2796.47 920.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="3" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 2796.47 920.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M2708.47 1052.17L2686.05 1100.46L2624.81 1065.11L2708.47 1052.17Z" fill="#C4C4C4"/>
                 <path d="M3011.11 1024.41L3033.52 976.121L3094.76 1011.47L3011.11 1024.41Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2835.75 1125.65L2813.33 1173.94L2752.09 1138.59L2835.75 1125.65Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2883.83 950.935L2906.24 902.643L2967.48 937.995L2883.83 950.935Z" fill="#C4C4C4"/>
                 <path d="M2702.1 947.261L2618.45 934.321L2679.69 898.969L2702.1 947.261Z" fill="#C4C4C4"/>
-                <rect data-table="4" onClick={selectTable} className={styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 3514.47 709.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
+                <rect data-table="4" onClick={selectTable} className={"map__table "+styles.map__table} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 3514.47 709.094)" fill="black" stroke="#F4C113" strokeWidth="4"/>
                 <path d="M3426.47 841.171L3404.05 889.463L3342.82 854.111L3426.47 841.171Z" fill="#C4C4C4"/>
                 <path d="M3729.11 813.413L3751.52 765.121L3812.76 800.473L3729.11 813.413Z" fill="white" fillOpacity="0.3"/>
                 <path d="M3553.75 914.65L3531.33 962.942L3470.09 927.59L3553.75 914.65Z" fill="white" fillOpacity="0.3"/>
