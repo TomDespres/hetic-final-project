@@ -40,9 +40,9 @@
     }
     &__marker{
         position: absolute;
-        top:50%;
-        left:50%;
-        transform: translate3d(70%,-270%,0);
+        top:vw(-10);
+        left:vw(50);
+        // transform: translate3d(70%,-270%,0);
         padding:vw(16);
         width:vw(233);
         border-radius: vw(16);
@@ -194,6 +194,8 @@
         transform:translate3d(-50%,-50%,0);
         width:rem(1000);
         &__marker{
+            top:rem(-80);
+            left:rem(-40);
             z-index: 1;
             transform: translate3d(-50%,-50%,0);
             padding:rem(16);
@@ -313,6 +315,8 @@
         }
         width:vh(2600);
         &__marker{
+            top:vh(-10);
+            left:vh(50);
             padding:vh(16);
             width:vh(233);
             border-radius: vh(16);
