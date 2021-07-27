@@ -17,7 +17,6 @@ export default function Home() {
     {
       onDrag: ({ offset: [dx, dy] }) => {
         if (window.matchMedia("(max-width: 640px)").matches) {
-          console.log('cc');
           setCrop((crop) => ({ ...crop, x: dx, y: dy }));
         }
       },
