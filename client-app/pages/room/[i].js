@@ -156,13 +156,6 @@ export default function Home(props) {
               <li className={styles.map__marker__contentList__item}>
                 <p className={styles.map__marker__contentList__item__label}>Table: <span className={styles.map__marker__contentList__item__text}>{currentTable}</span></p>
               </li>
-              <li className={styles.map__marker__contentList__availability}>
-              <svg className={styles.map__marker__contentList__availability__svg} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="7" cy="7" r="7" fill="#93cc6f33"/>
-                <circle cx="7" cy="7" r="4" fill="#93CC6F"/>
-              </svg>
-                {currentTable__nbChairs} place{currentTable__nbChairs > 1 ? "s" : ""} disponible{currentTable__nbChairs > 1 ? "s" : ""}
-              </li>
             </ul>
             <button className={styles.map__marker__btn}>
               <svg className={styles.map__marker__btn__svg} viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,6 +166,7 @@ export default function Home(props) {
               <path d="M18 17L1.48619e-06 6.67477e-07L36 3.8147e-06L18 17Z" fill="black"/>
             </svg>
           </div> 
+          
           <div className={styles.map__info__slider} ref={sliderRef}>
             <div className={styles.map__info__slider__pagination} ref={paginationRef}>
               <div className={styles.map__info__slider__pagination__round+" "+styles.map__info__slider__pagination__round__selected}></div>
@@ -360,7 +354,6 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableCh
     }
   },[availableChairs]);
 
-
   useEffect(()=>{
     if(elementsPosition){
       let arrayChairsPosition = []
@@ -378,7 +371,6 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableCh
     }
   },[elementsPosition]);
 
-  
   useEffect(()=>{
     if(chairsPosition){
       let arrayDom = []
@@ -391,7 +383,6 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableCh
       }
       setArrayChairsDom(arrayDom)
     }
-    console.log('cc')
   },[chairsPosition,isAvailableChairs]);
 
   useEffect(()=>{
