@@ -336,6 +336,10 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableCh
   useEffect(()=> {
     fetchElementsPosition()
     fetchAvailableChairs()
+    setInterval(() => {
+      fetchElementsPosition();
+      fetchAvailableChairs();
+    }, 10000);
   }, []);
 
   useEffect(()=>{
@@ -387,7 +391,7 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableCh
       }
       setArrayChairsDom(arrayDom)
     }
-
+    console.log('cc')
   },[chairsPosition,isAvailableChairs]);
 
   useEffect(()=>{
