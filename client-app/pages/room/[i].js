@@ -258,6 +258,8 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableCh
   const [elementsPosition, setElementsPosition] = useState(null)
   const [availableChairs, setAvailableChairs] = useState(null)
   const [isAvailableChairs, setIsAvailableChairs] = useState(null)
+  const [timeOnChairs, setTimeOnChairs] = useState(null)
+
   const fetchElementsPosition = async () => {
     const options = {
       url: 'https://us-west-2-1.aws.cloud2.influxdata.com/api/v2/query?org=najib.tahar-berrabah@hetic.net',
@@ -327,12 +329,52 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableCh
     setAvailableChairs(availableChairs)
     console.log(availableChairs)
   }
+
+  const fetchTimeOnChairs = async () => {
+    const options = {
+      url: 'https://us-west-2-1.aws.cloud2.influxdata.com/api/v2/query?org=najib.tahar-berrabah@hetic.net',
+      method: 'POST',
+      headers: {
+        'Authorization': 'Token cOg0bJOydZSfkVqtW71XbM6KAWe17iPiOFrepj8dEYLuR7WBZItrKHfHO2nGz0SIMBbCyx0UBBGiEGN2QLU3Og==',
+        'Content-Type': "application/vnd.flux; charset=utf-8"
+      },
+      data: 'from(bucket: "mqtt")\
+              |> range(start: -1h)\
+              |> filter(fn: (r) => r["_measurement"] == "Poids" and r["_field"] == "weight")\
+              |> map(fn: (r) => ({\
+                r with\
+                available:\
+                  if r._value >= 30 then false\
+                  else true\
+                }))\
+              |> filter(fn: (r) => r.available == false)\
+              |> aggregateWindow(every: 1s, fn: mean, createEmpty: false)\
+              |> count()'
+    }
+    const {data} = await axios(options)
+    const lines = data.split(/\r\n|\n/);
+    const times = lines.map((line, index) => {
+      if(index === 0) return
+      const arrayLine = line.split(',');
+
+      return {
+        time: arrayLine[9],
+        node_ID: arrayLine[3],
+      }
+    }).filter(line => line != undefined && line.node_ID != undefined)
+    setTimeOnChairs(times)
+    console.log(times)
+  }
+
+
   useEffect(()=> {
     fetchElementsPosition()
     fetchAvailableChairs()
+    fetchTimeOnChairs()
     setInterval(() => {
       fetchElementsPosition();
       fetchAvailableChairs();
+      fetchTimeOnChairs()
     }, 10000);
   }, []);
 
