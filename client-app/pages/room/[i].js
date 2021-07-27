@@ -351,7 +351,8 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableCh
         }
       }
       setNbAvailableChairs(nbAvailable);
-      setIsAvailableChairs(array)
+      setIsAvailableChairs(array);
+
     }
   },[availableChairs]);
 
@@ -381,7 +382,7 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableCh
           let isoX = ( (chairsPosition[i].position_x/100)+(chairsPosition[i].position_y/100) )*1000 + 1000;
           let isoY = ( ( (chairsPosition[i].position_y/100)-(chairsPosition[i].position_x/100) ) / 2.0)*1200 + 1000;
           arrayDom.push(
-            <path key={i} d="M83.7,48.3L0,35.4L61.2,0L83.7,48.3z" transform={`matrix(1 0 0 1 `+isoX+` `+isoY+`)`} fill={isAvailableChairs ? (isAvailableChairs[i] ? '#C4C4C4' : 'rgba(255,255,255,.3)') : 'rgba(255,255,255,.3)'}/>
+            <path key={i} d="M83.7,48.3L0,35.4L61.2,0L83.7,48.3z" transform={`matrix(1 0 0 1 `+isoX+` `+isoY+`)`} fill={isAvailableChairs ? (isAvailableChairs[i] === "true" ? '#C4C4C4' : 'rgba(255,255,255,.3)') : 'rgba(255,255,255,.3)'}/>
           );
       }
       setArrayChairsDom(arrayDom)
