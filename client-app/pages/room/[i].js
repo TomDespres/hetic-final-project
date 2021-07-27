@@ -343,7 +343,7 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableCh
       let array = []
       let nbAvailable = 0;
       for (var i = 0; i < availableChairs.length; i++) {
-        if(availableChairs[i].available){
+        if(availableChairs[i].available === "true"){
           array.push("true");
           nbAvailable++;
         }else{
