@@ -1,5 +1,5 @@
 import styles from '../../styles/pages/Room.module.scss';
-import { useEffect,useRef,useState } from "react";
+import { useCallback, useEffect,useRef,useState } from "react";
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
@@ -63,25 +63,25 @@ export default function Home(props) {
       x:offset.x,
       y:offset.y,
     })
-    switch (value) {
-      case "0":
-        setCurrentTable__nbChairs("7");
-        break;
-      case "1":
-        setCurrentTable__nbChairs("1");
-        break;
-      case "2":
-        setCurrentTable__nbChairs("2");
-        break;
-      case "3":
-        setCurrentTable__nbChairs("4");
-        break;
-      case "4":
-        setCurrentTable__nbChairs("6");
-        break;
-      default:
-        break;
-    }
+    // switch (value) {
+    //   case "0":
+    //     setCurrentTable__nbChairs("7");
+    //     break;
+    //   case "1":
+    //     setCurrentTable__nbChairs("1");
+    //     break;
+    //   case "2":
+    //     setCurrentTable__nbChairs("2");
+    //     break;
+    //   case "3":
+    //     setCurrentTable__nbChairs("4");
+    //     break;
+    //   case "4":
+    //     setCurrentTable__nbChairs("6");
+    //     break;
+    //   default:
+    //     break;
+    // }
 
     // if (window.matchMedia("(max-width: 640px)").matches) {
     //   setStyleMarker({
@@ -141,7 +141,7 @@ export default function Home(props) {
           <ButtonBack currentRoomIndex={currentRoomIndex} rooms={rooms} variant="next"/>          
         </div>
         <div className={styles.map__wrapper} ref={mapWrapperRef}>  
-          <RoomSvg room={room} onClickRoom={changeMarker} onDragRoom={onDragMarker} mapWrapperRef={mapWrapperRef}/> 
+          <RoomSvg room={room} onClickRoom={changeMarker} onDragRoom={onDragMarker} mapWrapperRef={mapWrapperRef} setNbAvailableChairs={setCurrentTable__nbChairs}/> 
           <div 
               className={styles.map__marker} 
               ref={markerRef} 
@@ -222,7 +222,7 @@ export default function Home(props) {
 }
 
 // room svg
-function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
+function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef, setNbAvailableChairs}) {
   const [currentTable, setCurrentTable] = useState("");
 
   //Map
@@ -254,10 +254,16 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
     }
   )
   
-  const [elementsPosition, setElementsPosition] = useState({})
-  const [availableChairs, setAvailableChairs] = useState({})
+  const [chairsPosition, setChairsPosition] = useState(null)
+  const [tablesPosition, setTablesPosition] = useState(null)
+  // const [nbTables, setNbTables] = useState(null)
+  const [arrayTablesDom, setArrayTablesDom] = useState(null)
+  const [arrayChairsDom, setArrayChairsDom] = useState(null)
 
   
+  const [elementsPosition, setElementsPosition] = useState(null)
+  const [availableChairs, setAvailableChairs] = useState(null)
+  const [isAvailableChairs, setIsAvailableChairs] = useState(null)
   const fetchElementsPosition = async () => {
     const options = {
       url: 'https://us-west-2-1.aws.cloud2.influxdata.com/api/v2/query?org=najib.tahar-berrabah@hetic.net',
@@ -330,7 +336,81 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
   useEffect(()=> {
     fetchElementsPosition()
     fetchAvailableChairs()
-  }, [])
+  }, []);
+
+  useEffect(()=>{
+    if(availableChairs){
+      let array = []
+      let nbAvailable = 0;
+      for (var i = 0; i < availableChairs.length; i++) {
+        if(availableChairs[i].available){
+          array.push("true");
+          nbAvailable++;
+        }else{
+          array.push("false")
+        }
+      }
+      setNbAvailableChairs(nbAvailable);
+      setIsAvailableChairs(array)
+    }
+  },[availableChairs]);
+
+
+  useEffect(()=>{
+    if(elementsPosition){
+      let arrayChairsPosition = []
+      let arrayTablesPosition = []
+      elementsPosition.forEach((element)=>{
+        if(element.node_ID.indexOf('Chaise') !== -1){
+          arrayChairsPosition.push(element)
+        }
+        if(element.node_ID.indexOf('Table') !== -1){
+          arrayTablesPosition.push(element)
+        }
+      });
+      setChairsPosition(arrayChairsPosition);
+      setTablesPosition(arrayTablesPosition);
+    }
+  },[elementsPosition]);
+
+  
+  useEffect(()=>{
+    if(chairsPosition){
+      let arrayDom = []
+      for (var i = 0; i < chairsPosition.length; i++) {
+          let isoX = ( (chairsPosition[i].position_x/100)+(chairsPosition[i].position_y/100) )*1000 + 1000;
+          let isoY = ( ( (chairsPosition[i].position_y/100)-(chairsPosition[i].position_x/100) ) / 2.0)*1200 + 1000;
+          arrayDom.push(
+            <path key={i} d="M83.7,48.3L0,35.4L61.2,0L83.7,48.3z" transform={`matrix(1 0 0 1 `+isoX+` `+isoY+`)`} fill={isAvailableChairs ? (isAvailableChairs[i] ? '#C4C4C4' : 'rgba(255,255,255,.3)') : 'rgba(255,255,255,.3)'}/>
+          );
+      }
+      setArrayChairsDom(arrayDom)
+    }
+
+  },[chairsPosition,isAvailableChairs]);
+
+  useEffect(()=>{
+    if(tablesPosition){
+      let arrayDom = []
+
+      // const list = [
+      //   {position_x: 0, position_y: 0},
+      //   {position_x: 0, position_y: 100},
+      //   {position_x: 100, position_y: 100},
+      //   {position_x: 100, position_y: 0},
+      //   {position_x: 50, position_y: 50},
+      //   {position_x: 50, position_y: 50}
+      // ]
+
+      for (var i = 0; i < tablesPosition.length; i++) {
+          let isoX = ( (tablesPosition[i].position_x/100)+(tablesPosition[i].position_y/100) )*1000 + 1000;
+          let isoY = ( ( (tablesPosition[i].position_y/100)-(tablesPosition[i].position_x/100) ) / 2.0)*1200 + 1000;
+          arrayDom.push(<rect key={i} data-table={i} className={"map__table "+styles.map__table} onClick={selectTable} y="0" width="322.592" height="159.296" transform={`matrix(0.866044 0.499967 -0.866044 0.499967 `+isoX+` `+isoY+`)`} fill="black" stroke="#F4C113" strokeWidth="4"/>);
+      }
+
+      setArrayTablesDom(arrayDom)
+    }
+  },[tablesPosition]);
 
   const selectTable = (e)=>{
     roomRef.current.querySelectorAll(".map__table").forEach((table)=>{
@@ -372,6 +452,7 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
     // tables
     e.target.classList.add(styles.map__table__selected);
   }
+
   switch (room) {
     case 'A624':
       return  <svg  ref={roomRef} 
@@ -381,9 +462,10 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
                     }}
                     className={styles.map} viewBox="0 0 3536 2042" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect y="1.99987" width="2445.44" height="1628.96" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1415.95 1)" fill="black" stroke="#F4C113" strokeWidth="4"/>
-                <rect data-table="0" className={"map__table "+styles.map__table} onClick={selectTable} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1975.27 1511.8)" fill="black" stroke="#F4C113" strokeWidth="4"/>
-                <path d="M1887.27 1643.87L1864.85 1692.16L1803.62 1656.81L1887.27 1643.87Z" fill="#C4C4C4"/>
-                <path d="M2189.91 1616.11L2212.32 1567.82L2273.56 1603.17L2189.91 1616.11Z" fill="white" fillOpacity="0.3"/>
+                {/* <rect data-table="0" className={"map__table "+styles.map__table} onClick={selectTable} y="1.99987" width="322.592" height="159.296" transform="matrix(0.866044 0.499967 -0.866044 0.499967 1975.27 1511.8)" fill="black" stroke="#F4C113" strokeWidth="4"/> */}
+                {arrayTablesDom}
+                {arrayChairsDom}
+                {/* <path d="M2189.91 1616.11L2212.32 1567.82L2273.56 1603.17L2189.91 1616.11Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2207.59 1727.56L2291.24 1740.5L2230 1775.85L2207.59 1727.56Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2014.55 1717.35L1992.13 1765.64L1930.9 1730.29L2014.55 1717.35Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2062.63 1542.64L2085.04 1494.34L2146.28 1529.7L2062.63 1542.64Z" fill="#C4C4C4"/>
@@ -411,7 +493,7 @@ function RoomSvg({room, onClickRoom, onDragRoom, mapWrapperRef}) {
                 <path d="M2381.54 1358.53L2359.12 1406.82L2297.88 1371.47L2381.54 1358.53Z" fill="#C4C4C4"/>
                 <path d="M2684.18 1330.77L2706.59 1282.48L2767.83 1317.83L2684.18 1330.77Z" fill="white" fillOpacity="0.3"/>
                 <path d="M2508.81 1432.01L2486.4 1480.3L2425.16 1444.95L2508.81 1432.01Z" fill="white" fillOpacity="0.3"/>
-                <path d="M2556.9 1257.3L2579.31 1209L2640.55 1244.36L2556.9 1257.3Z" fill="#C4C4C4"/>
+                <path d="M2556.9 1257.3L2579.31 1209L2640.55 1244.36L2556.9 1257.3Z" fill="#C4C4C4"/> */}
               </svg>
       break;
     case 'A623':
