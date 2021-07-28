@@ -138,10 +138,10 @@
                 height:vw(24);
             }
             &:nth-of-type(4){
-                height:vw(30);
+                height:vw(52);
             }
             &:nth-of-type(5){
-                height:vw(36);
+                height:vw(60);
             }
             &:nth-of-type(6){
                 height:vw(24);
@@ -304,9 +304,36 @@
                 margin-right:rem(7);
                 width:rem(18);
                 height:rem(60);
-                &:last-of-type{
-                    margin-right:rem(0);
+                &:nth-of-type(1){
+                    height:rem(12);
+                }
+                &:nth-of-type(2){
                     height:rem(6);
+                }
+                &:nth-of-type(3){
+                    height:rem(24);
+                }
+                &:nth-of-type(4){
+                    height:rem(52);
+                }
+                &:nth-of-type(5){
+                    height:rem(60);
+                }
+                &:nth-of-type(6){
+                    height:rem(24);
+                }
+                &:nth-of-type(7){
+                    height:rem(12);
+                }
+                &:nth-of-type(8){
+                    height:rem(18);
+                }
+                &:nth-of-type(9){
+                    height:rem(12);
+                }
+                &:nth-of-type(10){
+                    height:rem(6);
+                    margin-right:rem(0);
                 }
             }
             &__day{
@@ -389,9 +416,36 @@
                 margin-right:vh(7);
                 width:vh(18);
                 height:vh(60);
-                &:last-of-type{
-                    margin-right:vh(0);
+                &:nth-of-type(1){
+                    height:vh(12);
+                }
+                &:nth-of-type(2){
                     height:vh(6);
+                }
+                &:nth-of-type(3){
+                    height:vh(24);
+                }
+                &:nth-of-type(4){
+                    height:vh(52);
+                }
+                &:nth-of-type(5){
+                    height:vh(60);
+                }
+                &:nth-of-type(6){
+                    height:vh(24);
+                }
+                &:nth-of-type(7){
+                    height:vh(12);
+                }
+                &:nth-of-type(8){
+                    height:vh(18);
+                }
+                &:nth-of-type(9){
+                    height:vh(12);
+                }
+                &:nth-of-type(10){
+                    height:vh(6);
+                    margin-right:vh(0);
                 }
             }
             &__day{
